@@ -20,5 +20,10 @@ namespace AdmissityUET.models
             this.operator_email = email;
             this.operator_password = password;
         }
+        public Operator(string user_name,  string password)
+        {
+            this.operator_user_name = user_name;
+            this.operator_password = password;
+        }
     }
 }

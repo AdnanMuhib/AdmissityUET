@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdmissityUET.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,6 +47,7 @@ namespace AdmissityUET
         {
             string username = txtUserName.Text;
             string password = txtPassword.Text;
+            Operator op = new Operator(username, password);
             if (username.Equals(""))
             {
                 MessageBox.Show("Enter User Name !!!");
@@ -56,7 +58,7 @@ namespace AdmissityUET
                 MessageBox.Show("Enter Password !!!");
                 return;
             }
-            if(username.Equals("admin") && password.Equals("admin"))
+            if(APPLICATION.VerifyOperator(op))
             {
                 MessageBox.Show("Login Successfull");
             }

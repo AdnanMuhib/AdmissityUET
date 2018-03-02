@@ -86,5 +86,16 @@ namespace AdmissityUET.models
             }
             return true;
         }
+        // Verify the Login Credentials
+        public static bool VerifyOperator(Operator op)
+        {
+            // code to match the credentials from the database 
+            if(op.operator_user_name.Equals("admin") && op.operator_password.Equals("admin"))
+            {
+                return true;
+            }
+            // if not matched
+            return false;
+        }
     }
 }
