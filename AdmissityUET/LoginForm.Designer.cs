@@ -116,10 +116,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Ravie", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(77, 9);
+            this.label3.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(145, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(628, 36);
+            this.label3.Size = new System.Drawing.Size(502, 32);
             this.label3.TabIndex = 7;
             this.label3.Text = "UET ADMISSION CONTROL SYSTEM";
             // 
