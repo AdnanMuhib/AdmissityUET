@@ -79,6 +79,9 @@
             this.txtDepartmentName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.numDeptSeats = new System.Windows.Forms.NumericUpDown();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExitWindow)).BeginInit();
             this.panel3.SuspendLayout();
@@ -95,6 +98,8 @@
             this.panelDepartments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDeptSeats)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -722,12 +727,44 @@
             this.numDeptSeats.Size = new System.Drawing.Size(43, 24);
             this.numDeptSeats.TabIndex = 19;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label23);
+            this.panel1.Location = new System.Drawing.Point(152, 75);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(569, 269);
+            this.panel1.TabIndex = 12;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label23.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(0, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(141, 23);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Welcome UET";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(41, 57);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(458, 160);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1027, 599);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelSideBar);
             this.Controls.Add(this.PanelHeader);
             this.Controls.Add(this.personalInfoPanel);
@@ -761,6 +798,9 @@
             this.panelDepartments.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDeptSeats)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -817,5 +857,8 @@
         private System.Windows.Forms.Button btnAddDepartment;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label23;
     }
 }

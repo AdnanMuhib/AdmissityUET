@@ -52,7 +52,7 @@ namespace AdmissityUET.forms
         public MainForm()
         {
             InitializeComponent();
-            personalInfoPanel.BringToFront();
+            panel1.BringToFront();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
