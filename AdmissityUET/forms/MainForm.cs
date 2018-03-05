@@ -33,12 +33,55 @@ namespace AdmissityUET.forms
         public MainForm()
         {
             InitializeComponent();
+            personalInfoPanel.BringToFront();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void btnExitWindow_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void MainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+        }
+
+        private void btnNewApplication_Click(object sender, EventArgs e)
+        {
+            personalInfoPanel.BringToFront();
+        }
+
+        private void btnMoveToEduPanel_Click(object sender, EventArgs e)
+        {
+            educationalInfoPanel.BringToFront();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            personalInfoPanel.BringToFront();
+        }
+
+        private void btnMoveToPrefListPanel_Click(object sender, EventArgs e)
+        {
+            panelPreferenceList.BringToFront();
+        }
+
+        private void btnBackToEducationalInfo_Click(object sender, EventArgs e)
+        {
+            educationalInfoPanel.BringToFront();
+        }
+
+        private void btnSubmitApplication_Click(object sender, EventArgs e)
+        {
+            // Do Something to Submit the Application
+            Console.WriteLine("Application Submitted");
+        }
+
+        private void btnAddPreference_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
