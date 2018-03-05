@@ -71,6 +71,14 @@
             this.dropDownDepartment = new System.Windows.Forms.ComboBox();
             this.btnAddPreference = new System.Windows.Forms.Button();
             this.dataGridPreferences = new System.Windows.Forms.DataGridView();
+            this.panelDepartments = new System.Windows.Forms.Panel();
+            this.dataGridDepartments = new System.Windows.Forms.DataGridView();
+            this.btnAddDepartment = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtDepartmentName = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.numDeptSeats = new System.Windows.Forms.NumericUpDown();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExitWindow)).BeginInit();
             this.panel3.SuspendLayout();
@@ -84,6 +92,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numGatMarks)).BeginInit();
             this.panelPreferenceList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPreferences)).BeginInit();
+            this.panelDepartments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDeptSeats)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -190,6 +201,7 @@
             this.btnDepartments.TabIndex = 1;
             this.btnDepartments.Text = "Departments";
             this.btnDepartments.UseVisualStyleBackColor = false;
+            this.btnDepartments.Click += new System.EventHandler(this.btnDepartments_Click);
             // 
             // btnNewApplication
             // 
@@ -611,6 +623,105 @@
             this.dataGridPreferences.Size = new System.Drawing.Size(515, 111);
             this.dataGridPreferences.TabIndex = 16;
             // 
+            // panelDepartments
+            // 
+            this.panelDepartments.Controls.Add(this.numDeptSeats);
+            this.panelDepartments.Controls.Add(this.label16);
+            this.panelDepartments.Controls.Add(this.txtDepartmentName);
+            this.panelDepartments.Controls.Add(this.btnAddDepartment);
+            this.panelDepartments.Controls.Add(this.label9);
+            this.panelDepartments.Controls.Add(this.label15);
+            this.panelDepartments.Controls.Add(this.dataGridDepartments);
+            this.panelDepartments.Location = new System.Drawing.Point(152, 75);
+            this.panelDepartments.Name = "panelDepartments";
+            this.panelDepartments.Size = new System.Drawing.Size(569, 269);
+            this.panelDepartments.TabIndex = 18;
+            // 
+            // dataGridDepartments
+            // 
+            this.dataGridDepartments.AllowUserToDeleteRows = false;
+            this.dataGridDepartments.AllowUserToResizeColumns = false;
+            this.dataGridDepartments.AllowUserToResizeRows = false;
+            this.dataGridDepartments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridDepartments.BackgroundColor = System.Drawing.Color.Coral;
+            this.dataGridDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDepartments.GridColor = System.Drawing.Color.OrangeRed;
+            this.dataGridDepartments.Location = new System.Drawing.Point(35, 76);
+            this.dataGridDepartments.Name = "dataGridDepartments";
+            this.dataGridDepartments.ReadOnly = true;
+            this.dataGridDepartments.RowHeadersVisible = false;
+            this.dataGridDepartments.Size = new System.Drawing.Size(515, 173);
+            this.dataGridDepartments.TabIndex = 16;
+            // 
+            // btnAddDepartment
+            // 
+            this.btnAddDepartment.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnAddDepartment.FlatAppearance.BorderSize = 2;
+            this.btnAddDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDepartment.Font = new System.Drawing.Font("Verdana", 10F);
+            this.btnAddDepartment.Image = ((System.Drawing.Image)(resources.GetObject("btnAddDepartment.Image")));
+            this.btnAddDepartment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddDepartment.Location = new System.Drawing.Point(428, 40);
+            this.btnAddDepartment.Name = "btnAddDepartment";
+            this.btnAddDepartment.Size = new System.Drawing.Size(122, 30);
+            this.btnAddDepartment.TabIndex = 15;
+            this.btnAddDepartment.Text = "ADD";
+            this.btnAddDepartment.UseVisualStyleBackColor = true;
+            this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Verdana", 10F);
+            this.label9.Location = new System.Drawing.Point(25, 50);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(136, 17);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Department Name";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label15.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(0, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(332, 23);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Departments and Available Quota";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtDepartmentName
+            // 
+            this.txtDepartmentName.Font = new System.Drawing.Font("Verdana", 10F);
+            this.txtDepartmentName.Location = new System.Drawing.Point(168, 46);
+            this.txtDepartmentName.Name = "txtDepartmentName";
+            this.txtDepartmentName.Size = new System.Drawing.Size(131, 24);
+            this.txtDepartmentName.TabIndex = 17;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Verdana", 10F);
+            this.label16.Location = new System.Drawing.Point(305, 50);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(48, 17);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "Seats";
+            // 
+            // numDeptSeats
+            // 
+            this.numDeptSeats.Font = new System.Drawing.Font("Verdana", 10F);
+            this.numDeptSeats.Location = new System.Drawing.Point(359, 46);
+            this.numDeptSeats.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numDeptSeats.Name = "numDeptSeats";
+            this.numDeptSeats.Size = new System.Drawing.Size(43, 24);
+            this.numDeptSeats.TabIndex = 19;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,9 +730,10 @@
             this.ClientSize = new System.Drawing.Size(1027, 599);
             this.Controls.Add(this.PanelSideBar);
             this.Controls.Add(this.PanelHeader);
+            this.Controls.Add(this.personalInfoPanel);
+            this.Controls.Add(this.panelDepartments);
             this.Controls.Add(this.panelPreferenceList);
             this.Controls.Add(this.educationalInfoPanel);
-            this.Controls.Add(this.personalInfoPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -645,6 +757,10 @@
             this.panelPreferenceList.ResumeLayout(false);
             this.panelPreferenceList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPreferences)).EndInit();
+            this.panelDepartments.ResumeLayout(false);
+            this.panelDepartments.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDeptSeats)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -693,5 +809,13 @@
         private System.Windows.Forms.ComboBox dropDownDepartment;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridPreferences;
+        private System.Windows.Forms.Panel panelDepartments;
+        private System.Windows.Forms.NumericUpDown numDeptSeats;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtDepartmentName;
+        private System.Windows.Forms.DataGridView dataGridDepartments;
+        private System.Windows.Forms.Button btnAddDepartment;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label15;
     }
 }

@@ -222,5 +222,38 @@ namespace AdmissityUET.forms
             bs.DataSource = prefs;
             dataGridPreferences.DataSource = bs;
         }
+
+        private void btnDepartments_Click(object sender, EventArgs e)
+        {
+            // Displaying Departments in the Data Grid View
+            BindingSource bs = new BindingSource();
+            bs.DataSource = APPLICATION.departments;
+            dataGridDepartments.DataSource = bs;
+            panelDepartments.BringToFront();
+        }
+
+        private void btnAddDepartment_Click(object sender, EventArgs e)
+        {
+            if(txtDepartmentName.Text.Equals("") || numDeptSeats.Value.Equals(0))
+            {
+                MessageBox.Show("Department Name or number of seats is missing");
+                return;
+            }
+            Department d = new Department(txtDepartmentName.Text, Convert.ToInt32(numDeptSeats.Value));
+            if (APPLICATION.AddDepartment(d)) {
+                MessageBox.Show("Department Successfully Added");
+                // Displaying Departments in the Data Grid View
+                BindingSource bs = new BindingSource();
+                bs.DataSource = APPLICATION.departments;
+                dataGridDepartments.DataSource = bs;
+                txtDepartmentName.Text = "";
+                numDeptSeats.Value = 0;
+            }
+            else
+            {
+                MessageBox.Show("Department Already Added");
+            }
+            
+        }
     }
 }

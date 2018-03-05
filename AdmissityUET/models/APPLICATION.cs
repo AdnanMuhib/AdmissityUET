@@ -41,7 +41,7 @@ namespace AdmissityUET.models
             return true;
         }
 
-        public bool AddDepartment(Department dpt)
+        public static bool AddDepartment(Department dpt)
         {
             // check if the department is not already added 
             foreach (Department d in departments)
