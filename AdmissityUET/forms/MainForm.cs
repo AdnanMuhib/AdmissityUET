@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdmissityUET.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,24 @@ namespace AdmissityUET.forms
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
+
+        // some attributes
+        private List<Department> depts { set; get; }
+        private List<Preference> prefs { set; get; }
+        private const int MATRIC_TOTAL = 1100;
+        private const int FSC_TOTAL = 1100;
+        private const int ECAT_TOTAL = 400;
+        
+        // Calculates the Aggrigate
+        private double calculateAggrigate(int fsc, int ecat)
+        {
+            // Formula Logic to calculate the Aggrigate
+            double fscSeventyPercentage = (double)fsc / FSC_TOTAL * 100 * 0.7;
+            double ecatThirtyPercentage = (double)ecat / ECAT_TOTAL * 100 * 0.3;
+            double aggregate = fscSeventyPercentage + ecatThirtyPercentage;
+            return aggregate; 
+        }
+
         public MainForm()
         {
             InitializeComponent();
@@ -65,6 +84,25 @@ namespace AdmissityUET.forms
 
         private void btnMoveToPrefListPanel_Click(object sender, EventArgs e)
         {
+            dataGridPreferences.DataSource = null;
+            // get the list of departments
+            depts = APPLICATION.departments;
+            // make a string list for dept name only
+            List<string> departs = new List<string>();
+            // copy every dept name to the list
+            foreach(Department d in depts)
+            {
+                departs.Add(d.dept_name);
+            }
+            // create a binding source for drop down
+            BindingSource bs = new BindingSource();
+            bs.DataSource = departs;
+            // set binding source to the drop down list departs
+            dropDownDepartment.DataSource = bs;
+
+            // create new list to store the preferences 
+            prefs = new List<Preference>();
+            // Finally bring preference form to front
             panelPreferenceList.BringToFront();
         }
 
@@ -75,13 +113,114 @@ namespace AdmissityUET.forms
 
         private void btnSubmitApplication_Click(object sender, EventArgs e)
         {
-            // Do Something to Submit the Application
-            Console.WriteLine("Application Submitted");
+            StudentApplication app = new StudentApplication();
+            // check personal Information
+            if (txtName.Text.Equals("") ||
+                txtFatherName.Text.Equals("") ||
+                txtEmail.Text.Equals("") ||
+                txtPhoneNumber.Text.Equals("") ||
+                txtIDCard.Equals(""))
+            {
+                MessageBox.Show("Personal information Incomplete");
+                return;
+            }
+            // add Personal Information
+            app.student_name = txtName.Text;
+            app.std_father_name = txtFatherName.Text;
+            app.std_email = txtEmail.Text;
+            app.std_phone_number = txtPhoneNumber.Text;
+            app.std_id_card = txtIDCard.Text;
+
+            // check Educational Information
+            if (numMatricMarks.Value.Equals(0) ||
+                numMatricMarks.Value.Equals(0) ||
+                numEcatMarks.Value.Equals(0))
+            {
+                MessageBox.Show("Incomplete Educational Details");
+                return;
+            }
+            // add educational details
+            app.Matric_got_marks = Convert.ToInt32(numMatricMarks.Value);
+            app.FSC_got_marks = Convert.ToInt32(numFSCMarks.Value);
+            app.ECAT_got_marks = Convert.ToInt32(numEcatMarks.Value);
+            app.GAT_got_marks = Convert.ToInt32(numGatMarks.Value);
+            app.aggregate = calculateAggrigate(app.FSC_got_marks, app.ECAT_got_marks);
+
+            // check Preference List
+            if (prefs.Count == 3)
+            {
+                // Add Preference List
+                app.preferences = prefs;
+            }
+            else
+            {
+                MessageBox.Show("You Must Add 3 Preferences");
+            }
+            // Application Ready.. Now Add into Database
+            if (APPLICATION.AddStudentApplication(app))
+            {
+                MessageBox.Show("Application Submitted Successfully");
+                // function call to print the receipt for the Student
+                //
+                // clear the Filled Text Boxes
+                txtName.Text = "";
+                txtFatherName.Text = "";
+                txtIDCard.Text = "";
+                txtPhoneNumber.Text = "";
+                txtEmail.Text = "";
+                numMatricMarks.Value = 0;
+                numFSCMarks.Value = 0;
+                numEcatMarks.Value = 0;
+                numGatMarks.Value = 0;
+                dataGridPreferences.DataSource = null;
+                prefs = null;
+                personalInfoPanel.BringToFront();
+            }
+
+            
         }
 
         private void btnAddPreference_Click(object sender, EventArgs e)
         {
-
+            Preference p = new Preference();
+            p.pref_dept_name = dropDownDepartment.SelectedValue.ToString();
+            // check if the preference is already selected or not
+            foreach (Preference pr in prefs)
+            {
+                if (p.pref_dept_name.Equals(pr.pref_dept_name))
+                {
+                    MessageBox.Show("Already Added");
+                    return;
+                }
+            }
+            p.pref_id = prefs.Count + 1;
+            if(p.pref_id == 1)
+            {
+                p.pref_number = "First";
+            }
+            else if (p.pref_id == 2)
+            {
+                p.pref_number = "Second";
+            }
+            else if (p.pref_id == 3)
+            {
+                p.pref_number = "Third";
+            }
+             // check if three preferences are completed
+             if(prefs.Count <3)
+            {
+                // Add to the Preference List
+                prefs.Add(p);
+            }
+            else
+            {
+                MessageBox.Show("All Preferences selected");
+                return;
+            }
+            // create biding source 
+            BindingSource bs = new BindingSource();
+            bs.DataSource = prefs;
+            dataGridPreferences.DataSource = bs;
         }
     }
 }

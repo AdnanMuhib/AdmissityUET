@@ -16,12 +16,12 @@ namespace AdmissityUET.models
         public string  std_email { get; set; }
         public string  std_phone_number { get; set; }
         public string  std_id_card { get; set; }
-        public int Matric_total_marks { get; set; }
+        //public int Matric_total_marks { get; set; }
         public int Matric_got_marks { get; set; }
-        public int FSC_total_marks { get; set; }
+        //public int FSC_total_marks { get; set; }
         public int FSC_got_marks { get; set; }
         public int ECAT_got_marks { get; set; }
-        public int GAT_total_marks { get; set; }
+        //public int GAT_total_marks { get; set; }
         public int GAT_got_marks { get; set; }
         public double aggregate { get; set; }
         public List<Preference> preferences { get; set; }
@@ -30,18 +30,18 @@ namespace AdmissityUET.models
         {
             // each time new student added a new ARN is generated
             ARN = ARN + 1;
-            app_ref_number = 0;
+            app_ref_number = ARN;
             student_name = "";
             std_father_name = "";
             std_email = "";
             std_phone_number = "";
             std_id_card = "";
-            Matric_total_marks = 0;
+           // Matric_total_marks = 0;
             Matric_got_marks = 0;
-            FSC_total_marks = 0;
+            //FSC_total_marks = 0;
             FSC_got_marks = 0;
             ECAT_got_marks = 0;
-            GAT_total_marks = 0;
+            //GAT_total_marks = 0;
             GAT_got_marks = 0;
             aggregate = 0.0;
         }

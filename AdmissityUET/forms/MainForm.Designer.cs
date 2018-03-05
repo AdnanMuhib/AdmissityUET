@@ -571,12 +571,12 @@
             // 
             // dropDownDepartment
             // 
-            this.dropDownDepartment.Font = new System.Drawing.Font("Verdana", 12F);
+            this.dropDownDepartment.Font = new System.Drawing.Font("Verdana", 10F);
             this.dropDownDepartment.FormattingEnabled = true;
-            this.dropDownDepartment.Location = new System.Drawing.Point(224, 42);
+            this.dropDownDepartment.Location = new System.Drawing.Point(191, 42);
             this.dropDownDepartment.MaxDropDownItems = 30;
             this.dropDownDepartment.Name = "dropDownDepartment";
-            this.dropDownDepartment.Size = new System.Drawing.Size(188, 26);
+            this.dropDownDepartment.Size = new System.Drawing.Size(221, 24);
             this.dropDownDepartment.TabIndex = 14;
             // 
             // btnAddPreference

@@ -1,4 +1,5 @@
 ﻿using AdmissityUET.forms;
+using AdmissityUET.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace AdmissityUET
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoginForm());
+            APPLICATION a = new APPLICATION();
             Application.Run(new MainForm());
         }
     }

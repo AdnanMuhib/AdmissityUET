@@ -8,12 +8,25 @@ namespace AdmissityUET.models
 {
     class APPLICATION
     {
-        public static List<StudentApplication> applications { get; set; }
-        public static List<Department> departments { get; set; }
-        public static List<SelectedStudent> selectedStudents{ get; set; }
+        public static List<StudentApplication> applications = new List<StudentApplication>();
+        public static List<Department> departments = new List<Department>();
+        public static List<SelectedStudent> selectedStudents = new List<SelectedStudent>();
         
+        // Add some dummy data on the application launch
+        public APPLICATION()
+        {
+            Department a = new Department("Computer Science",5);
+            Department b = new Department("Computer Engineering", 5);
+            Department c = new Department("Electrical", 5);
+            Department d = new Department("CIVIL", 5);
+            departments.Add(a);
+            departments.Add(b);
+            departments.Add(c);
+            departments.Add(d);
+        }
+
         // Add Student Application if it is not already added into the database
-        public bool AddStudentApplication(StudentApplication app)
+        public static bool AddStudentApplication(StudentApplication app)
         {
             foreach(StudentApplication std in applications)
             {
