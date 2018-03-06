@@ -53,6 +53,11 @@ namespace AdmissityUET.forms
         {
             InitializeComponent();
             panel1.BringToFront();
+            // new Binding Source to display in Applications Data Grid
+            BindingSource bs = new BindingSource();
+            bs.DataSource = APPLICATION.applications;
+            dataGridApplications.DataSource = bs;
+            panelApplications.Visible = false;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
@@ -70,16 +75,19 @@ namespace AdmissityUET.forms
         private void btnNewApplication_Click(object sender, EventArgs e)
         {
             personalInfoPanel.BringToFront();
+            panelApplications.Visible = false;
         }
 
         private void btnMoveToEduPanel_Click(object sender, EventArgs e)
         {
             educationalInfoPanel.BringToFront();
+            panelApplications.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             personalInfoPanel.BringToFront();
+            panelApplications.Visible = false;
         }
 
         private void btnMoveToPrefListPanel_Click(object sender, EventArgs e)
@@ -104,11 +112,13 @@ namespace AdmissityUET.forms
             prefs = new List<Preference>();
             // Finally bring preference form to front
             panelPreferenceList.BringToFront();
+            panelApplications.Visible = false;
         }
 
         private void btnBackToEducationalInfo_Click(object sender, EventArgs e)
         {
             educationalInfoPanel.BringToFront();
+            panelApplications.Visible = false;
         }
 
         private void btnSubmitApplication_Click(object sender, EventArgs e)
@@ -160,6 +170,11 @@ namespace AdmissityUET.forms
             if (APPLICATION.AddStudentApplication(app))
             {
                 MessageBox.Show("Application Submitted Successfully");
+                // new Binding Source to display in Applications Data Grid
+                BindingSource bs = new BindingSource();
+                bs.DataSource = APPLICATION.applications;
+                dataGridApplications.DataSource = bs;
+
                 // function call to print the receipt for the Student
                 //
                 // clear the Filled Text Boxes
@@ -175,6 +190,7 @@ namespace AdmissityUET.forms
                 dataGridPreferences.DataSource = null;
                 prefs = null;
                 personalInfoPanel.BringToFront();
+                panelApplications.Visible = false;
             }
 
             
@@ -230,6 +246,7 @@ namespace AdmissityUET.forms
             bs.DataSource = APPLICATION.departments;
             dataGridDepartments.DataSource = bs;
             panelDepartments.BringToFront();
+            panelApplications.Visible = false;
         }
 
         private void btnAddDepartment_Click(object sender, EventArgs e)
@@ -254,6 +271,12 @@ namespace AdmissityUET.forms
                 MessageBox.Show("Department Already Added");
             }
             
+        }
+
+        private void btnMeritList_Click(object sender, EventArgs e)
+        {
+            panelApplications.Visible = true;
+            panelApplications.BringToFront();
         }
     }
 }

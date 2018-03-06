@@ -39,49 +39,54 @@
             this.btnDepartments = new System.Windows.Forms.Button();
             this.btnNewApplication = new System.Windows.Forms.Button();
             this.personalInfoPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtFatherName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnMoveToEduPanel = new System.Windows.Forms.Button();
             this.txtIDCard = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnMoveToEduPanel = new System.Windows.Forms.Button();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtFatherName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.educationalInfoPanel = new System.Windows.Forms.Panel();
+            this.numGatMarks = new System.Windows.Forms.NumericUpDown();
+            this.numEcatMarks = new System.Windows.Forms.NumericUpDown();
+            this.numFSCMarks = new System.Windows.Forms.NumericUpDown();
+            this.numMatricMarks = new System.Windows.Forms.NumericUpDown();
+            this.btnBackToPersonalInfoPanel = new System.Windows.Forms.Button();
             this.btnMoveToPrefListPanel = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnBackToPersonalInfoPanel = new System.Windows.Forms.Button();
-            this.numMatricMarks = new System.Windows.Forms.NumericUpDown();
-            this.numFSCMarks = new System.Windows.Forms.NumericUpDown();
-            this.numEcatMarks = new System.Windows.Forms.NumericUpDown();
-            this.numGatMarks = new System.Windows.Forms.NumericUpDown();
             this.panelPreferenceList = new System.Windows.Forms.Panel();
+            this.dataGridPreferences = new System.Windows.Forms.DataGridView();
+            this.btnAddPreference = new System.Windows.Forms.Button();
+            this.dropDownDepartment = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnBackToEducationalInfo = new System.Windows.Forms.Button();
             this.btnSubmitApplication = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dropDownDepartment = new System.Windows.Forms.ComboBox();
-            this.btnAddPreference = new System.Windows.Forms.Button();
-            this.dataGridPreferences = new System.Windows.Forms.DataGridView();
             this.panelDepartments = new System.Windows.Forms.Panel();
-            this.dataGridDepartments = new System.Windows.Forms.DataGridView();
+            this.numDeptSeats = new System.Windows.Forms.NumericUpDown();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtDepartmentName = new System.Windows.Forms.TextBox();
             this.btnAddDepartment = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtDepartmentName = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.numDeptSeats = new System.Windows.Forms.NumericUpDown();
+            this.dataGridDepartments = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panelApplications = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnSendEmail = new System.Windows.Forms.Button();
+            this.dataGridApplications = new System.Windows.Forms.DataGridView();
+            this.btnGenerateMeritList = new System.Windows.Forms.Button();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExitWindow)).BeginInit();
             this.panel3.SuspendLayout();
@@ -89,17 +94,19 @@
             this.PanelSideBar.SuspendLayout();
             this.personalInfoPanel.SuspendLayout();
             this.educationalInfoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMatricMarks)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numFSCMarks)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numEcatMarks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGatMarks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEcatMarks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFSCMarks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMatricMarks)).BeginInit();
             this.panelPreferenceList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPreferences)).BeginInit();
             this.panelDepartments.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDeptSeats)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartments)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelApplications.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridApplications)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -188,6 +195,7 @@
             this.btnMeritList.TabIndex = 2;
             this.btnMeritList.Text = "Merit List";
             this.btnMeritList.UseVisualStyleBackColor = false;
+            this.btnMeritList.Click += new System.EventHandler(this.btnMeritList_Click);
             // 
             // btnDepartments
             // 
@@ -246,89 +254,21 @@
             this.personalInfoPanel.Size = new System.Drawing.Size(569, 269);
             this.personalInfoPanel.TabIndex = 3;
             // 
-            // label1
+            // btnMoveToEduPanel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Personal Information";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 10F);
-            this.label4.Location = new System.Drawing.Point(29, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 17);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Student Name";
-            // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("Verdana", 10F);
-            this.txtName.Location = new System.Drawing.Point(167, 42);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(400, 24);
-            this.txtName.TabIndex = 2;
-            // 
-            // txtFatherName
-            // 
-            this.txtFatherName.Font = new System.Drawing.Font("Verdana", 10F);
-            this.txtFatherName.Location = new System.Drawing.Point(167, 70);
-            this.txtFatherName.Name = "txtFatherName";
-            this.txtFatherName.Size = new System.Drawing.Size(400, 24);
-            this.txtFatherName.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 10F);
-            this.label5.Location = new System.Drawing.Point(29, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 17);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Father Name";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Verdana", 10F);
-            this.txtEmail.Location = new System.Drawing.Point(167, 101);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(400, 24);
-            this.txtEmail.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 10F);
-            this.label6.Location = new System.Drawing.Point(29, 105);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 17);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Email";
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Font = new System.Drawing.Font("Verdana", 10F);
-            this.txtPhoneNumber.Location = new System.Drawing.Point(167, 131);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(400, 24);
-            this.txtPhoneNumber.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 10F);
-            this.label7.Location = new System.Drawing.Point(29, 135);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 17);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Phone Number";
+            this.btnMoveToEduPanel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnMoveToEduPanel.FlatAppearance.BorderSize = 2;
+            this.btnMoveToEduPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMoveToEduPanel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoveToEduPanel.Image = ((System.Drawing.Image)(resources.GetObject("btnMoveToEduPanel.Image")));
+            this.btnMoveToEduPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMoveToEduPanel.Location = new System.Drawing.Point(444, 208);
+            this.btnMoveToEduPanel.Name = "btnMoveToEduPanel";
+            this.btnMoveToEduPanel.Size = new System.Drawing.Size(122, 45);
+            this.btnMoveToEduPanel.TabIndex = 11;
+            this.btnMoveToEduPanel.Text = "NEXT";
+            this.btnMoveToEduPanel.UseVisualStyleBackColor = true;
+            this.btnMoveToEduPanel.Click += new System.EventHandler(this.btnMoveToEduPanel_Click);
             // 
             // txtIDCard
             // 
@@ -348,21 +288,89 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "ID Card/B-Form";
             // 
-            // btnMoveToEduPanel
+            // txtPhoneNumber
             // 
-            this.btnMoveToEduPanel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnMoveToEduPanel.FlatAppearance.BorderSize = 2;
-            this.btnMoveToEduPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMoveToEduPanel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMoveToEduPanel.Image = ((System.Drawing.Image)(resources.GetObject("btnMoveToEduPanel.Image")));
-            this.btnMoveToEduPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMoveToEduPanel.Location = new System.Drawing.Point(444, 208);
-            this.btnMoveToEduPanel.Name = "btnMoveToEduPanel";
-            this.btnMoveToEduPanel.Size = new System.Drawing.Size(122, 45);
-            this.btnMoveToEduPanel.TabIndex = 11;
-            this.btnMoveToEduPanel.Text = "NEXT";
-            this.btnMoveToEduPanel.UseVisualStyleBackColor = true;
-            this.btnMoveToEduPanel.Click += new System.EventHandler(this.btnMoveToEduPanel_Click);
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Verdana", 10F);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(167, 131);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(400, 24);
+            this.txtPhoneNumber.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 10F);
+            this.label7.Location = new System.Drawing.Point(29, 135);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 17);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Phone Number";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Verdana", 10F);
+            this.txtEmail.Location = new System.Drawing.Point(167, 101);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(400, 24);
+            this.txtEmail.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 10F);
+            this.label6.Location = new System.Drawing.Point(29, 105);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 17);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Email";
+            // 
+            // txtFatherName
+            // 
+            this.txtFatherName.Font = new System.Drawing.Font("Verdana", 10F);
+            this.txtFatherName.Location = new System.Drawing.Point(167, 70);
+            this.txtFatherName.Name = "txtFatherName";
+            this.txtFatherName.Size = new System.Drawing.Size(400, 24);
+            this.txtFatherName.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 10F);
+            this.label5.Location = new System.Drawing.Point(29, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 17);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Father Name";
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Verdana", 10F);
+            this.txtName.Location = new System.Drawing.Point(167, 42);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(400, 24);
+            this.txtName.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 10F);
+            this.label4.Location = new System.Drawing.Point(29, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 17);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Student Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Personal Information";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // educationalInfoPanel
             // 
@@ -381,6 +389,74 @@
             this.educationalInfoPanel.Name = "educationalInfoPanel";
             this.educationalInfoPanel.Size = new System.Drawing.Size(569, 269);
             this.educationalInfoPanel.TabIndex = 12;
+            // 
+            // numGatMarks
+            // 
+            this.numGatMarks.Font = new System.Drawing.Font("Verdana", 12F);
+            this.numGatMarks.Location = new System.Drawing.Point(379, 130);
+            this.numGatMarks.Maximum = new decimal(new int[] {
+            1100,
+            0,
+            0,
+            0});
+            this.numGatMarks.Name = "numGatMarks";
+            this.numGatMarks.Size = new System.Drawing.Size(120, 27);
+            this.numGatMarks.TabIndex = 16;
+            // 
+            // numEcatMarks
+            // 
+            this.numEcatMarks.Font = new System.Drawing.Font("Verdana", 12F);
+            this.numEcatMarks.Location = new System.Drawing.Point(379, 100);
+            this.numEcatMarks.Maximum = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            this.numEcatMarks.Name = "numEcatMarks";
+            this.numEcatMarks.Size = new System.Drawing.Size(120, 27);
+            this.numEcatMarks.TabIndex = 15;
+            // 
+            // numFSCMarks
+            // 
+            this.numFSCMarks.Font = new System.Drawing.Font("Verdana", 12F);
+            this.numFSCMarks.Location = new System.Drawing.Point(379, 69);
+            this.numFSCMarks.Maximum = new decimal(new int[] {
+            1100,
+            0,
+            0,
+            0});
+            this.numFSCMarks.Name = "numFSCMarks";
+            this.numFSCMarks.Size = new System.Drawing.Size(120, 27);
+            this.numFSCMarks.TabIndex = 14;
+            // 
+            // numMatricMarks
+            // 
+            this.numMatricMarks.Font = new System.Drawing.Font("Verdana", 12F);
+            this.numMatricMarks.Location = new System.Drawing.Point(379, 38);
+            this.numMatricMarks.Maximum = new decimal(new int[] {
+            1100,
+            0,
+            0,
+            0});
+            this.numMatricMarks.Name = "numMatricMarks";
+            this.numMatricMarks.Size = new System.Drawing.Size(120, 27);
+            this.numMatricMarks.TabIndex = 13;
+            // 
+            // btnBackToPersonalInfoPanel
+            // 
+            this.btnBackToPersonalInfoPanel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnBackToPersonalInfoPanel.FlatAppearance.BorderSize = 2;
+            this.btnBackToPersonalInfoPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToPersonalInfoPanel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToPersonalInfoPanel.Image = ((System.Drawing.Image)(resources.GetObject("btnBackToPersonalInfoPanel.Image")));
+            this.btnBackToPersonalInfoPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBackToPersonalInfoPanel.Location = new System.Drawing.Point(291, 208);
+            this.btnBackToPersonalInfoPanel.Name = "btnBackToPersonalInfoPanel";
+            this.btnBackToPersonalInfoPanel.Size = new System.Drawing.Size(122, 45);
+            this.btnBackToPersonalInfoPanel.TabIndex = 12;
+            this.btnBackToPersonalInfoPanel.Text = "BACK";
+            this.btnBackToPersonalInfoPanel.UseVisualStyleBackColor = true;
+            this.btnBackToPersonalInfoPanel.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnMoveToPrefListPanel
             // 
@@ -450,74 +526,6 @@
             this.label14.Text = "Educational Information";
             this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnBackToPersonalInfoPanel
-            // 
-            this.btnBackToPersonalInfoPanel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnBackToPersonalInfoPanel.FlatAppearance.BorderSize = 2;
-            this.btnBackToPersonalInfoPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackToPersonalInfoPanel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToPersonalInfoPanel.Image = ((System.Drawing.Image)(resources.GetObject("btnBackToPersonalInfoPanel.Image")));
-            this.btnBackToPersonalInfoPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBackToPersonalInfoPanel.Location = new System.Drawing.Point(291, 208);
-            this.btnBackToPersonalInfoPanel.Name = "btnBackToPersonalInfoPanel";
-            this.btnBackToPersonalInfoPanel.Size = new System.Drawing.Size(122, 45);
-            this.btnBackToPersonalInfoPanel.TabIndex = 12;
-            this.btnBackToPersonalInfoPanel.Text = "BACK";
-            this.btnBackToPersonalInfoPanel.UseVisualStyleBackColor = true;
-            this.btnBackToPersonalInfoPanel.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // numMatricMarks
-            // 
-            this.numMatricMarks.Font = new System.Drawing.Font("Verdana", 12F);
-            this.numMatricMarks.Location = new System.Drawing.Point(379, 38);
-            this.numMatricMarks.Maximum = new decimal(new int[] {
-            1100,
-            0,
-            0,
-            0});
-            this.numMatricMarks.Name = "numMatricMarks";
-            this.numMatricMarks.Size = new System.Drawing.Size(120, 27);
-            this.numMatricMarks.TabIndex = 13;
-            // 
-            // numFSCMarks
-            // 
-            this.numFSCMarks.Font = new System.Drawing.Font("Verdana", 12F);
-            this.numFSCMarks.Location = new System.Drawing.Point(379, 69);
-            this.numFSCMarks.Maximum = new decimal(new int[] {
-            1100,
-            0,
-            0,
-            0});
-            this.numFSCMarks.Name = "numFSCMarks";
-            this.numFSCMarks.Size = new System.Drawing.Size(120, 27);
-            this.numFSCMarks.TabIndex = 14;
-            // 
-            // numEcatMarks
-            // 
-            this.numEcatMarks.Font = new System.Drawing.Font("Verdana", 12F);
-            this.numEcatMarks.Location = new System.Drawing.Point(379, 100);
-            this.numEcatMarks.Maximum = new decimal(new int[] {
-            400,
-            0,
-            0,
-            0});
-            this.numEcatMarks.Name = "numEcatMarks";
-            this.numEcatMarks.Size = new System.Drawing.Size(120, 27);
-            this.numEcatMarks.TabIndex = 15;
-            // 
-            // numGatMarks
-            // 
-            this.numGatMarks.Font = new System.Drawing.Font("Verdana", 12F);
-            this.numGatMarks.Location = new System.Drawing.Point(379, 130);
-            this.numGatMarks.Maximum = new decimal(new int[] {
-            1100,
-            0,
-            0,
-            0});
-            this.numGatMarks.Name = "numGatMarks";
-            this.numGatMarks.Size = new System.Drawing.Size(120, 27);
-            this.numGatMarks.TabIndex = 16;
-            // 
             // panelPreferenceList
             // 
             this.panelPreferenceList.Controls.Add(this.dataGridPreferences);
@@ -531,6 +539,58 @@
             this.panelPreferenceList.Name = "panelPreferenceList";
             this.panelPreferenceList.Size = new System.Drawing.Size(569, 269);
             this.panelPreferenceList.TabIndex = 17;
+            // 
+            // dataGridPreferences
+            // 
+            this.dataGridPreferences.AllowUserToDeleteRows = false;
+            this.dataGridPreferences.AllowUserToResizeColumns = false;
+            this.dataGridPreferences.AllowUserToResizeRows = false;
+            this.dataGridPreferences.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridPreferences.BackgroundColor = System.Drawing.Color.Coral;
+            this.dataGridPreferences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPreferences.GridColor = System.Drawing.Color.OrangeRed;
+            this.dataGridPreferences.Location = new System.Drawing.Point(35, 76);
+            this.dataGridPreferences.Name = "dataGridPreferences";
+            this.dataGridPreferences.ReadOnly = true;
+            this.dataGridPreferences.RowHeadersVisible = false;
+            this.dataGridPreferences.Size = new System.Drawing.Size(515, 111);
+            this.dataGridPreferences.TabIndex = 16;
+            // 
+            // btnAddPreference
+            // 
+            this.btnAddPreference.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnAddPreference.FlatAppearance.BorderSize = 2;
+            this.btnAddPreference.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPreference.Font = new System.Drawing.Font("Verdana", 10F);
+            this.btnAddPreference.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPreference.Image")));
+            this.btnAddPreference.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddPreference.Location = new System.Drawing.Point(428, 40);
+            this.btnAddPreference.Name = "btnAddPreference";
+            this.btnAddPreference.Size = new System.Drawing.Size(122, 30);
+            this.btnAddPreference.TabIndex = 15;
+            this.btnAddPreference.Text = "ADD";
+            this.btnAddPreference.UseVisualStyleBackColor = true;
+            this.btnAddPreference.Click += new System.EventHandler(this.btnAddPreference_Click);
+            // 
+            // dropDownDepartment
+            // 
+            this.dropDownDepartment.Font = new System.Drawing.Font("Verdana", 10F);
+            this.dropDownDepartment.FormattingEnabled = true;
+            this.dropDownDepartment.Location = new System.Drawing.Point(191, 42);
+            this.dropDownDepartment.MaxDropDownItems = 30;
+            this.dropDownDepartment.Name = "dropDownDepartment";
+            this.dropDownDepartment.Size = new System.Drawing.Size(221, 24);
+            this.dropDownDepartment.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 10F);
+            this.label2.Location = new System.Drawing.Point(35, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(150, 17);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Choose Department";
             // 
             // btnBackToEducationalInfo
             // 
@@ -576,58 +636,6 @@
             this.label18.Text = "Preference List";
             this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 10F);
-            this.label2.Location = new System.Drawing.Point(35, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 17);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Choose Department";
-            // 
-            // dropDownDepartment
-            // 
-            this.dropDownDepartment.Font = new System.Drawing.Font("Verdana", 10F);
-            this.dropDownDepartment.FormattingEnabled = true;
-            this.dropDownDepartment.Location = new System.Drawing.Point(191, 42);
-            this.dropDownDepartment.MaxDropDownItems = 30;
-            this.dropDownDepartment.Name = "dropDownDepartment";
-            this.dropDownDepartment.Size = new System.Drawing.Size(221, 24);
-            this.dropDownDepartment.TabIndex = 14;
-            // 
-            // btnAddPreference
-            // 
-            this.btnAddPreference.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnAddPreference.FlatAppearance.BorderSize = 2;
-            this.btnAddPreference.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPreference.Font = new System.Drawing.Font("Verdana", 10F);
-            this.btnAddPreference.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPreference.Image")));
-            this.btnAddPreference.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddPreference.Location = new System.Drawing.Point(428, 40);
-            this.btnAddPreference.Name = "btnAddPreference";
-            this.btnAddPreference.Size = new System.Drawing.Size(122, 30);
-            this.btnAddPreference.TabIndex = 15;
-            this.btnAddPreference.Text = "ADD";
-            this.btnAddPreference.UseVisualStyleBackColor = true;
-            this.btnAddPreference.Click += new System.EventHandler(this.btnAddPreference_Click);
-            // 
-            // dataGridPreferences
-            // 
-            this.dataGridPreferences.AllowUserToDeleteRows = false;
-            this.dataGridPreferences.AllowUserToResizeColumns = false;
-            this.dataGridPreferences.AllowUserToResizeRows = false;
-            this.dataGridPreferences.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridPreferences.BackgroundColor = System.Drawing.Color.Coral;
-            this.dataGridPreferences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPreferences.GridColor = System.Drawing.Color.OrangeRed;
-            this.dataGridPreferences.Location = new System.Drawing.Point(35, 76);
-            this.dataGridPreferences.Name = "dataGridPreferences";
-            this.dataGridPreferences.ReadOnly = true;
-            this.dataGridPreferences.RowHeadersVisible = false;
-            this.dataGridPreferences.Size = new System.Drawing.Size(515, 111);
-            this.dataGridPreferences.TabIndex = 16;
-            // 
             // panelDepartments
             // 
             this.panelDepartments.Controls.Add(this.numDeptSeats);
@@ -642,21 +650,36 @@
             this.panelDepartments.Size = new System.Drawing.Size(569, 269);
             this.panelDepartments.TabIndex = 18;
             // 
-            // dataGridDepartments
+            // numDeptSeats
             // 
-            this.dataGridDepartments.AllowUserToDeleteRows = false;
-            this.dataGridDepartments.AllowUserToResizeColumns = false;
-            this.dataGridDepartments.AllowUserToResizeRows = false;
-            this.dataGridDepartments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridDepartments.BackgroundColor = System.Drawing.Color.Coral;
-            this.dataGridDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDepartments.GridColor = System.Drawing.Color.OrangeRed;
-            this.dataGridDepartments.Location = new System.Drawing.Point(35, 76);
-            this.dataGridDepartments.Name = "dataGridDepartments";
-            this.dataGridDepartments.ReadOnly = true;
-            this.dataGridDepartments.RowHeadersVisible = false;
-            this.dataGridDepartments.Size = new System.Drawing.Size(515, 173);
-            this.dataGridDepartments.TabIndex = 16;
+            this.numDeptSeats.Font = new System.Drawing.Font("Verdana", 10F);
+            this.numDeptSeats.Location = new System.Drawing.Point(359, 46);
+            this.numDeptSeats.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numDeptSeats.Name = "numDeptSeats";
+            this.numDeptSeats.Size = new System.Drawing.Size(43, 24);
+            this.numDeptSeats.TabIndex = 19;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Verdana", 10F);
+            this.label16.Location = new System.Drawing.Point(305, 50);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(48, 17);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "Seats";
+            // 
+            // txtDepartmentName
+            // 
+            this.txtDepartmentName.Font = new System.Drawing.Font("Verdana", 10F);
+            this.txtDepartmentName.Location = new System.Drawing.Point(168, 46);
+            this.txtDepartmentName.Name = "txtDepartmentName";
+            this.txtDepartmentName.Size = new System.Drawing.Size(131, 24);
+            this.txtDepartmentName.TabIndex = 17;
             // 
             // btnAddDepartment
             // 
@@ -696,36 +719,21 @@
             this.label15.Text = "Departments and Available Quota";
             this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtDepartmentName
+            // dataGridDepartments
             // 
-            this.txtDepartmentName.Font = new System.Drawing.Font("Verdana", 10F);
-            this.txtDepartmentName.Location = new System.Drawing.Point(168, 46);
-            this.txtDepartmentName.Name = "txtDepartmentName";
-            this.txtDepartmentName.Size = new System.Drawing.Size(131, 24);
-            this.txtDepartmentName.TabIndex = 17;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Verdana", 10F);
-            this.label16.Location = new System.Drawing.Point(305, 50);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(48, 17);
-            this.label16.TabIndex = 18;
-            this.label16.Text = "Seats";
-            // 
-            // numDeptSeats
-            // 
-            this.numDeptSeats.Font = new System.Drawing.Font("Verdana", 10F);
-            this.numDeptSeats.Location = new System.Drawing.Point(359, 46);
-            this.numDeptSeats.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.numDeptSeats.Name = "numDeptSeats";
-            this.numDeptSeats.Size = new System.Drawing.Size(43, 24);
-            this.numDeptSeats.TabIndex = 19;
+            this.dataGridDepartments.AllowUserToDeleteRows = false;
+            this.dataGridDepartments.AllowUserToResizeColumns = false;
+            this.dataGridDepartments.AllowUserToResizeRows = false;
+            this.dataGridDepartments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridDepartments.BackgroundColor = System.Drawing.Color.Coral;
+            this.dataGridDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDepartments.GridColor = System.Drawing.Color.OrangeRed;
+            this.dataGridDepartments.Location = new System.Drawing.Point(35, 76);
+            this.dataGridDepartments.Name = "dataGridDepartments";
+            this.dataGridDepartments.ReadOnly = true;
+            this.dataGridDepartments.RowHeadersVisible = false;
+            this.dataGridDepartments.Size = new System.Drawing.Size(515, 173);
+            this.dataGridDepartments.TabIndex = 16;
             // 
             // panel1
             // 
@@ -735,6 +743,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(569, 269);
             this.panel1.TabIndex = 12;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(41, 57);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(458, 160);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // label23
             // 
@@ -748,15 +766,74 @@
             this.label23.Text = "Welcome UET";
             this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pictureBox2
+            // panelApplications
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(41, 57);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(458, 160);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.panelApplications.Controls.Add(this.btnGenerateMeritList);
+            this.panelApplications.Controls.Add(this.dataGridApplications);
+            this.panelApplications.Controls.Add(this.btnSendEmail);
+            this.panelApplications.Controls.Add(this.label17);
+            this.panelApplications.Location = new System.Drawing.Point(152, 75);
+            this.panelApplications.Name = "panelApplications";
+            this.panelApplications.Size = new System.Drawing.Size(844, 269);
+            this.panelApplications.TabIndex = 13;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label17.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(0, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(265, 23);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Applications and Merit List";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnSendEmail
+            // 
+            this.btnSendEmail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSendEmail.FlatAppearance.BorderSize = 2;
+            this.btnSendEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendEmail.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnSendEmail.Image")));
+            this.btnSendEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSendEmail.Location = new System.Drawing.Point(679, 31);
+            this.btnSendEmail.Name = "btnSendEmail";
+            this.btnSendEmail.Size = new System.Drawing.Size(122, 45);
+            this.btnSendEmail.TabIndex = 12;
+            this.btnSendEmail.Text = "Email";
+            this.btnSendEmail.UseVisualStyleBackColor = true;
+            // 
+            // dataGridApplications
+            // 
+            this.dataGridApplications.AllowUserToDeleteRows = false;
+            this.dataGridApplications.AllowUserToResizeColumns = false;
+            this.dataGridApplications.AllowUserToResizeRows = false;
+            this.dataGridApplications.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridApplications.BackgroundColor = System.Drawing.Color.Coral;
+            this.dataGridApplications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridApplications.GridColor = System.Drawing.Color.OrangeRed;
+            this.dataGridApplications.Location = new System.Drawing.Point(35, 82);
+            this.dataGridApplications.Name = "dataGridApplications";
+            this.dataGridApplications.ReadOnly = true;
+            this.dataGridApplications.RowHeadersVisible = false;
+            this.dataGridApplications.Size = new System.Drawing.Size(766, 173);
+            this.dataGridApplications.TabIndex = 17;
+            // 
+            // btnGenerateMeritList
+            // 
+            this.btnGenerateMeritList.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnGenerateMeritList.FlatAppearance.BorderSize = 2;
+            this.btnGenerateMeritList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerateMeritList.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerateMeritList.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerateMeritList.Image")));
+            this.btnGenerateMeritList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerateMeritList.Location = new System.Drawing.Point(542, 31);
+            this.btnGenerateMeritList.Name = "btnGenerateMeritList";
+            this.btnGenerateMeritList.Size = new System.Drawing.Size(122, 45);
+            this.btnGenerateMeritList.TabIndex = 18;
+            this.btnGenerateMeritList.Text = "   Generate";
+            this.btnGenerateMeritList.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -764,13 +841,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1027, 599);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelSideBar);
             this.Controls.Add(this.PanelHeader);
-            this.Controls.Add(this.personalInfoPanel);
+            this.Controls.Add(this.panelApplications);
             this.Controls.Add(this.panelDepartments);
             this.Controls.Add(this.panelPreferenceList);
             this.Controls.Add(this.educationalInfoPanel);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.personalInfoPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -787,20 +865,23 @@
             this.personalInfoPanel.PerformLayout();
             this.educationalInfoPanel.ResumeLayout(false);
             this.educationalInfoPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMatricMarks)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numFSCMarks)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numEcatMarks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGatMarks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEcatMarks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFSCMarks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMatricMarks)).EndInit();
             this.panelPreferenceList.ResumeLayout(false);
             this.panelPreferenceList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPreferences)).EndInit();
             this.panelDepartments.ResumeLayout(false);
             this.panelDepartments.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDeptSeats)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartments)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelApplications.ResumeLayout(false);
+            this.panelApplications.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridApplications)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -860,5 +941,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel panelApplications;
+        private System.Windows.Forms.Button btnSendEmail;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnGenerateMeritList;
+        private System.Windows.Forms.DataGridView dataGridApplications;
     }
 }
