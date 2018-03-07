@@ -14,6 +14,8 @@ namespace AdmissityUET.forms
 {
     public partial class MainForm : Form
     {
+
+        // create Round Corners of Form
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
        (
@@ -52,6 +54,7 @@ namespace AdmissityUET.forms
         public MainForm()
         {
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             panel1.BringToFront();
             // new Binding Source to display in Applications Data Grid
             BindingSource bs = new BindingSource();
@@ -76,7 +79,10 @@ namespace AdmissityUET.forms
             dataGridApplications.Columns.Add(column4);
             dataGridApplications.DataSource = bs;
             panelApplications.Visible = false;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            // Hiding Extra Row for DataGridViews
+            dataGridApplications.AllowUserToAddRows = false;
+            dataGridDepartments.AllowUserToAddRows = false;
+            dataGridPreferences.AllowUserToAddRows = false;
         }
 
         private void btnExitWindow_Click(object sender, EventArgs e)
@@ -275,7 +281,8 @@ namespace AdmissityUET.forms
                 MessageBox.Show("Department Name or number of seats is missing");
                 return;
             }
-            Department d = new Department(txtDepartmentName.Text, Convert.ToInt32(numDeptSeats.Value));
+            int dept_id = APPLICATION.departments.Count + 1;
+            Department d = new Department(dept_id, txtDepartmentName.Text, Convert.ToInt32(numDeptSeats.Value));
             if (APPLICATION.AddDepartment(d)) {
                 MessageBox.Show("Department Successfully Added");
                 // Displaying Departments in the Data Grid View
@@ -301,8 +308,8 @@ namespace AdmissityUET.forms
         private void btnGenerateMeritList_Click(object sender, EventArgs e)
         {
             APPLICATION.GenerateMeritList();
-            btnSendEmail.Enabled = true;
-            btnPDFPrint.Enabled = true;
+            //btnSendEmail.Enabled = true;
+            //btnPDFPrint.Enabled = true;
             if (APPLICATION.selectedStudents.Count > 0)
             {
                 btnPDFPrint.Enabled = true;

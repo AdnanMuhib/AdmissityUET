@@ -29,10 +29,10 @@ namespace AdmissityUET.models
         private void AddDummyData()
         {
             // Add Dummy Department
-            Department a = new Department("Computer Science", 5);
-            Department b = new Department("Computer Engineering", 5);
-            Department c = new Department("Electrical", 5);
-            Department d = new Department("CIVIL", 5);
+            Department a = new Department(1,"Computer Science", 5);
+            Department b = new Department(2,"Computer Engineering", 5);
+            Department c = new Department(3,"Electrical", 5);
+            Department d = new Department(4,"CIVIL", 5);
             departments.Add(a);
             departments.Add(b);
             departments.Add(c);
