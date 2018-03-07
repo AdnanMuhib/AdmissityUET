@@ -79,14 +79,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.dataGridDepartments = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.panelApplications = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.btnSendEmail = new System.Windows.Forms.Button();
-            this.dataGridApplications = new System.Windows.Forms.DataGridView();
+            this.btnPDFPrint = new System.Windows.Forms.Button();
             this.btnGenerateMeritList = new System.Windows.Forms.Button();
+            this.dataGridApplications = new System.Windows.Forms.DataGridView();
+            this.btnSendEmail = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExitWindow)).BeginInit();
             this.panel3.SuspendLayout();
@@ -103,10 +104,10 @@
             this.panelDepartments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDeptSeats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartments)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelApplications.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridApplications)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -735,39 +736,9 @@
             this.dataGridDepartments.Size = new System.Drawing.Size(515, 173);
             this.dataGridDepartments.TabIndex = 16;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Location = new System.Drawing.Point(152, 75);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(569, 269);
-            this.panel1.TabIndex = 12;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(41, 57);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(458, 160);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label23.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(0, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(141, 23);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Welcome UET";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // panelApplications
             // 
+            this.panelApplications.Controls.Add(this.btnPDFPrint);
             this.panelApplications.Controls.Add(this.btnGenerateMeritList);
             this.panelApplications.Controls.Add(this.dataGridApplications);
             this.panelApplications.Controls.Add(this.btnSendEmail);
@@ -777,32 +748,38 @@
             this.panelApplications.Size = new System.Drawing.Size(844, 269);
             this.panelApplications.TabIndex = 13;
             // 
-            // label17
+            // btnPDFPrint
             // 
-            this.label17.AutoSize = true;
-            this.label17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label17.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(0, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(265, 23);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Applications and Merit List";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPDFPrint.Enabled = false;
+            this.btnPDFPrint.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnPDFPrint.FlatAppearance.BorderSize = 2;
+            this.btnPDFPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPDFPrint.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPDFPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPDFPrint.Image")));
+            this.btnPDFPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPDFPrint.Location = new System.Drawing.Point(677, 28);
+            this.btnPDFPrint.Name = "btnPDFPrint";
+            this.btnPDFPrint.Size = new System.Drawing.Size(122, 45);
+            this.btnPDFPrint.TabIndex = 19;
+            this.btnPDFPrint.Text = "  Print";
+            this.btnPDFPrint.UseVisualStyleBackColor = true;
+            this.btnPDFPrint.Click += new System.EventHandler(this.btnPDFPrint_Click);
             // 
-            // btnSendEmail
+            // btnGenerateMeritList
             // 
-            this.btnSendEmail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSendEmail.FlatAppearance.BorderSize = 2;
-            this.btnSendEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSendEmail.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnSendEmail.Image")));
-            this.btnSendEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSendEmail.Location = new System.Drawing.Point(679, 31);
-            this.btnSendEmail.Name = "btnSendEmail";
-            this.btnSendEmail.Size = new System.Drawing.Size(122, 45);
-            this.btnSendEmail.TabIndex = 12;
-            this.btnSendEmail.Text = "Email";
-            this.btnSendEmail.UseVisualStyleBackColor = true;
+            this.btnGenerateMeritList.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnGenerateMeritList.FlatAppearance.BorderSize = 2;
+            this.btnGenerateMeritList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerateMeritList.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerateMeritList.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerateMeritList.Image")));
+            this.btnGenerateMeritList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerateMeritList.Location = new System.Drawing.Point(413, 28);
+            this.btnGenerateMeritList.Name = "btnGenerateMeritList";
+            this.btnGenerateMeritList.Size = new System.Drawing.Size(122, 45);
+            this.btnGenerateMeritList.TabIndex = 18;
+            this.btnGenerateMeritList.Text = "   Generate";
+            this.btnGenerateMeritList.UseVisualStyleBackColor = true;
+            this.btnGenerateMeritList.Click += new System.EventHandler(this.btnGenerateMeritList_Click);
             // 
             // dataGridApplications
             // 
@@ -820,20 +797,65 @@
             this.dataGridApplications.Size = new System.Drawing.Size(766, 173);
             this.dataGridApplications.TabIndex = 17;
             // 
-            // btnGenerateMeritList
+            // btnSendEmail
             // 
-            this.btnGenerateMeritList.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnGenerateMeritList.FlatAppearance.BorderSize = 2;
-            this.btnGenerateMeritList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerateMeritList.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerateMeritList.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerateMeritList.Image")));
-            this.btnGenerateMeritList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerateMeritList.Location = new System.Drawing.Point(542, 31);
-            this.btnGenerateMeritList.Name = "btnGenerateMeritList";
-            this.btnGenerateMeritList.Size = new System.Drawing.Size(122, 45);
-            this.btnGenerateMeritList.TabIndex = 18;
-            this.btnGenerateMeritList.Text = "   Generate";
-            this.btnGenerateMeritList.UseVisualStyleBackColor = true;
+            this.btnSendEmail.Enabled = false;
+            this.btnSendEmail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSendEmail.FlatAppearance.BorderSize = 2;
+            this.btnSendEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendEmail.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnSendEmail.Image")));
+            this.btnSendEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSendEmail.Location = new System.Drawing.Point(545, 28);
+            this.btnSendEmail.Name = "btnSendEmail";
+            this.btnSendEmail.Size = new System.Drawing.Size(122, 45);
+            this.btnSendEmail.TabIndex = 12;
+            this.btnSendEmail.Text = "Email";
+            this.btnSendEmail.UseVisualStyleBackColor = true;
+            this.btnSendEmail.Click += new System.EventHandler(this.btnSendEmail_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label17.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(0, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(265, 23);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Applications and Merit List";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label23.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(0, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(141, 23);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Welcome UET";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(41, 57);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(458, 160);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label23);
+            this.panel1.Location = new System.Drawing.Point(152, 75);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(569, 269);
+            this.panel1.TabIndex = 12;
             // 
             // MainForm
             // 
@@ -876,12 +898,12 @@
             this.panelDepartments.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDeptSeats)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartments)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelApplications.ResumeLayout(false);
             this.panelApplications.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridApplications)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -938,13 +960,14 @@
         private System.Windows.Forms.Button btnAddDepartment;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panelApplications;
         private System.Windows.Forms.Button btnSendEmail;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnGenerateMeritList;
         private System.Windows.Forms.DataGridView dataGridApplications;
+        private System.Windows.Forms.Button btnPDFPrint;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

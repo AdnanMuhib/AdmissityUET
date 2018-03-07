@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using iTextSharp;
+using iTextSharp.text.pdf;
+using System.Net.Mail;
+using System.Net;
+using iTextSharp.text;
+using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using iTextSharp.text.pdf.draw;
 
 namespace AdmissityUET.models
 {
@@ -58,7 +66,7 @@ namespace AdmissityUET.models
             return true;
         }
 
-        public bool AddSelectedStudent(SelectedStudent std)
+        public static bool AddSelectedStudent(SelectedStudent std)
         {
             // check if student is not already selected
             foreach(SelectedStudent s in selectedStudents)
@@ -75,15 +83,41 @@ namespace AdmissityUET.models
             return true;
         }
         // core algorithm to generate the merit list
-        public void GenerateMeritList()
+        public static void GenerateMeritList()
         {
-            // logic to generate the merit list of student on behalf of different  criteria
+            // Sorting Students Applications On the Basis of Merit
+            List<StudentApplication> ApplicationsSortedList = APPLICATION.applications.OrderBy(o => o.aggregate).ToList();
+
+
         }
 
         // Customized Email to the selected students 
-        public void EmailSelectedStudents()
+        public static  void EmailSelectedStudents()
         {
-            // logic to send email
+            //email("adnan.muhib@rocketmail.com", "Adnan");
+            // Send Email to all selected students 
+            foreach (SelectedStudent std in selectedStudents)
+            {
+                email(std.email_id,std.name);
+            }
+        }
+        private static void email(string email, string name)
+        {
+            // email template to send email
+            string toaddr = email;
+            MailMessage msg = new MailMessage();
+            msg.Subject = "Congratulations!! Admission in UET";
+            msg.From = new MailAddress(AdmissityUET.Properties.Resources.senderEmail);
+            msg.Body = "Dear " + name + ", It is to inform you that you have been shortlisted for Admission in Most Prestigious University of Pakistan, submit your fee to confirm your seat before the due date.";
+            msg.To.Add(new MailAddress(toaddr));
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.UseDefaultCredentials = false;
+            smtp.EnableSsl = true;
+            NetworkCredential nc = new NetworkCredential(AdmissityUET.Properties.Resources.senderEmail, AdmissityUET.Properties.Resources.senderEmailPassword);
+            smtp.Credentials = nc;
+            smtp.Send(msg);
         }
         // Customized Email to Non selected Students
         public void EmailNonSelectedStudents()
@@ -91,12 +125,108 @@ namespace AdmissityUET.models
             // logic to send email 
         }
         // print the merit list on a pdf
-        public bool PrintMeritList()
+        public static bool PrintMeritList()
         {
             if(selectedStudents.Count <= 0)
             {
-                return false;
+               // return false;
             }
+            
+            // create a new file stream for pdf file
+            FileStream fs = new FileStream("Merit_List.pdf", FileMode.Create, FileAccess.Write, FileShare.None);
+            
+            Rectangle pageSize = new Rectangle(PageSize.A4);
+            
+            pageSize.BackgroundColor = new BaseColor(System.Drawing.Color.Azure);
+            // new document with above page size
+            Document doc = new Document(pageSize, 36, 72, 0, 36);
+            // pdf writer for the doc and fs
+            PdfWriter writer = PdfWriter.GetInstance(doc, fs);
+            // open Doc
+            doc.Open();
+            // Prepare logo for Display
+            string LOGO = "C:\\Users\\Antivirus\\Documents\\Visual Studio 2015\\Projects\\AdmissityUET\\AdmissityUET\\img\\logo.png";
+            Image pic = Image.GetInstance(LOGO);
+            pic.SpacingBefore = 1f;
+            pic.SpacingAfter = 1f;
+            pic.Alignment = Element.ALIGN_LEFT;
+            pic.SetAbsolutePosition(10f, 10f);
+            pic.ScaleAbsoluteHeight(50f);
+            pic.ScaleAbsoluteWidth(50f);           
+            // create new table with two columns for header
+            PdfPTable headTable = new PdfPTable(4);
+            headTable.WidthPercentage = 100;
+            headTable.DefaultCell.Border = Rectangle.NO_BORDER;
+            // create new cell for the logo
+            PdfPCell logoCell = new PdfPCell();
+            logoCell.Border = 0;
+            logoCell.PaddingTop = 5f;
+            logoCell.MinimumHeight= 80f;
+            
+            // add logo picture in the cell
+            logoCell.AddElement(pic);
+            // add logo cell in the table 
+            headTable.AddCell(logoCell);
+            
+            // create new heading for the PDF
+            Paragraph para = new Paragraph();
+            para.Add("Merit List UET");
+            var titleFont = FontFactory.GetFont("Courier", 23, BaseColor.BLACK);
+            para.Font = titleFont;
+            para.Alignment = Element.ALIGN_MIDDLE;
+            // create new cell for the Heading 
+            PdfPCell titleCell = new PdfPCell();
+            titleCell.Border = 0;
+            titleCell.MinimumHeight = 80f;
+            titleCell.Colspan = 3;
+            titleCell.HorizontalAlignment = 1;
+            titleCell.Padding = 10f;
+            // add heading inside the title cell of table
+            titleCell.AddElement(para);
+            // add heading title inside the table
+            headTable.AddCell(titleCell);
+            // add table inside the document
+            doc.Add(headTable);
+
+            // Add line seperator
+            Chunk linebreak = new Chunk(new LineSeparator(1f, 100f, BaseColor.GREEN, Element.ALIGN_CENTER, -1));
+            doc.Add(linebreak);
+
+            // Add list of Selected Students in the table
+            PdfPTable table = new PdfPTable(5);
+            table.WidthPercentage = 100;
+            table.PaddingTop = 150f;
+            PdfPCell cell = new PdfPCell(new Phrase("Admitted Students"));
+
+            cell.Colspan = 5;
+
+            cell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+
+            table.AddCell(cell);
+
+            table.AddCell("ARN");
+
+            table.AddCell("Name");
+
+            table.AddCell("Father Name");
+
+            table.AddCell("Aggregate");
+
+            table.AddCell("Department");
+            foreach(SelectedStudent std in selectedStudents)
+            {
+                table.AddCell(std.ARN.ToString());
+                table.AddCell(std.name);
+                table.AddCell(std.father_name);
+                table.AddCell(std.aggregate.ToString());
+                table.AddCell(std.department);
+            }
+            
+
+            doc.Add(table);
+            doc.Close();
+            writer.Close();
+            fs.Close();
             return true;
         }
         // Verify the Login Credentials

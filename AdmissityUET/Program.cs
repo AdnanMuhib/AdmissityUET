@@ -19,8 +19,8 @@ namespace AdmissityUET
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             APPLICATION a = new APPLICATION();
-            Application.Run(new LoginForm());
-            //Application.Run(new MainForm());
+            //Application.Run(new LoginForm());
+            Application.Run(new MainForm());
         }
     }
 }

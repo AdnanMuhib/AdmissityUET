@@ -56,6 +56,24 @@ namespace AdmissityUET.forms
             // new Binding Source to display in Applications Data Grid
             BindingSource bs = new BindingSource();
             bs.DataSource = APPLICATION.applications;
+            dataGridApplications.AutoGenerateColumns = false;
+            DataGridViewTextBoxColumn column1 = new DataGridViewTextBoxColumn();
+            column1.HeaderText = "ARN";
+            column1.DataPropertyName = "app_ref_number";
+            DataGridViewTextBoxColumn column2 = new DataGridViewTextBoxColumn();
+            column2.HeaderText = "Name";
+            column2.DataPropertyName = "student_name";
+            DataGridViewTextBoxColumn column3 = new DataGridViewTextBoxColumn();
+            column3.HeaderText = "Father Name";
+            column3.DataPropertyName = "std_father_name";
+            DataGridViewTextBoxColumn column4 = new DataGridViewTextBoxColumn();
+            column4.HeaderText = "Aggregate";
+            column4.DataPropertyName = "aggregate";
+
+            dataGridApplications.Columns.Add(column1);
+            dataGridApplications.Columns.Add(column2);
+            dataGridApplications.Columns.Add(column3);
+            dataGridApplications.Columns.Add(column4);
             dataGridApplications.DataSource = bs;
             panelApplications.Visible = false;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
@@ -173,6 +191,7 @@ namespace AdmissityUET.forms
                 // new Binding Source to display in Applications Data Grid
                 BindingSource bs = new BindingSource();
                 bs.DataSource = APPLICATION.applications;
+
                 dataGridApplications.DataSource = bs;
 
                 // function call to print the receipt for the Student
@@ -277,6 +296,28 @@ namespace AdmissityUET.forms
         {
             panelApplications.Visible = true;
             panelApplications.BringToFront();
+        }
+
+        private void btnGenerateMeritList_Click(object sender, EventArgs e)
+        {
+            APPLICATION.GenerateMeritList();
+            btnSendEmail.Enabled = true;
+            btnPDFPrint.Enabled = true;
+            if (APPLICATION.selectedStudents.Count > 0)
+            {
+                btnPDFPrint.Enabled = true;
+                btnSendEmail.Enabled = true;
+            }
+        }
+
+        private void btnSendEmail_Click(object sender, EventArgs e)
+        {
+            APPLICATION.EmailSelectedStudents();
+        }
+
+        private void btnPDFPrint_Click(object sender, EventArgs e)
+        {
+            APPLICATION.PrintMeritList();
         }
     }
 }
