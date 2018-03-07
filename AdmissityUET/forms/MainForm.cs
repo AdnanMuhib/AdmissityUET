@@ -308,8 +308,8 @@ namespace AdmissityUET.forms
         private void btnGenerateMeritList_Click(object sender, EventArgs e)
         {
             APPLICATION.GenerateMeritList();
-            //btnSendEmail.Enabled = true;
-            //btnPDFPrint.Enabled = true;
+            btnSendEmail.Enabled = true;
+            btnPDFPrint.Enabled = true;
             if (APPLICATION.selectedStudents.Count > 0)
             {
                 btnPDFPrint.Enabled = true;

@@ -145,6 +145,13 @@
     <Content Include="img\CSE dept logo.jpg" />
     <Content Include="img\logo.png" />
     <Content Include="img\logo400x400.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\Submit1.png" />
+    <None Include="Resources\prev1.png" />
+    <None Include="Resources\Plus Sign-24x24.png" />
+    <None Include="Resources\pdf-file-icon.png" />
+    <None Include="Resources\Generate-keys-icon.png" />
+    <None Include="Resources\email-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

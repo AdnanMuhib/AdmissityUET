@@ -126,7 +126,7 @@
             // 
             this.btnExitWindow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExitWindow.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExitWindow.Image = ((System.Drawing.Image)(resources.GetObject("btnExitWindow.Image")));
+            this.btnExitWindow.Image = global::AdmissityUET.Properties.Resources.cancel;
             this.btnExitWindow.Location = new System.Drawing.Point(920, 0);
             this.btnExitWindow.Name = "btnExitWindow";
             this.btnExitWindow.Size = new System.Drawing.Size(107, 69);
@@ -158,7 +158,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::AdmissityUET.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 69);
@@ -449,7 +449,7 @@
             this.btnBackToPersonalInfoPanel.FlatAppearance.BorderSize = 2;
             this.btnBackToPersonalInfoPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToPersonalInfoPanel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToPersonalInfoPanel.Image = ((System.Drawing.Image)(resources.GetObject("btnBackToPersonalInfoPanel.Image")));
+            this.btnBackToPersonalInfoPanel.Image = global::AdmissityUET.Properties.Resources.prev1;
             this.btnBackToPersonalInfoPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBackToPersonalInfoPanel.Location = new System.Drawing.Point(291, 208);
             this.btnBackToPersonalInfoPanel.Name = "btnBackToPersonalInfoPanel";
@@ -599,7 +599,7 @@
             this.btnBackToEducationalInfo.FlatAppearance.BorderSize = 2;
             this.btnBackToEducationalInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToEducationalInfo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToEducationalInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnBackToEducationalInfo.Image")));
+            this.btnBackToEducationalInfo.Image = global::AdmissityUET.Properties.Resources.prev1;
             this.btnBackToEducationalInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBackToEducationalInfo.Location = new System.Drawing.Point(291, 208);
             this.btnBackToEducationalInfo.Name = "btnBackToEducationalInfo";
@@ -615,7 +615,7 @@
             this.btnSubmitApplication.FlatAppearance.BorderSize = 2;
             this.btnSubmitApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitApplication.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmitApplication.Image = ((System.Drawing.Image)(resources.GetObject("btnSubmitApplication.Image")));
+            this.btnSubmitApplication.Image = global::AdmissityUET.Properties.Resources.Submit1;
             this.btnSubmitApplication.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubmitApplication.Location = new System.Drawing.Point(440, 208);
             this.btnSubmitApplication.Name = "btnSubmitApplication";
@@ -688,7 +688,7 @@
             this.btnAddDepartment.FlatAppearance.BorderSize = 2;
             this.btnAddDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDepartment.Font = new System.Drawing.Font("Verdana", 10F);
-            this.btnAddDepartment.Image = ((System.Drawing.Image)(resources.GetObject("btnAddDepartment.Image")));
+            this.btnAddDepartment.Image = global::AdmissityUET.Properties.Resources.Plus_Sign_24x24;
             this.btnAddDepartment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddDepartment.Location = new System.Drawing.Point(428, 40);
             this.btnAddDepartment.Name = "btnAddDepartment";
@@ -755,7 +755,7 @@
             this.btnPDFPrint.FlatAppearance.BorderSize = 2;
             this.btnPDFPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPDFPrint.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPDFPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPDFPrint.Image")));
+            this.btnPDFPrint.Image = global::AdmissityUET.Properties.Resources.pdf_file_icon;
             this.btnPDFPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPDFPrint.Location = new System.Drawing.Point(677, 28);
             this.btnPDFPrint.Name = "btnPDFPrint";
@@ -771,7 +771,7 @@
             this.btnGenerateMeritList.FlatAppearance.BorderSize = 2;
             this.btnGenerateMeritList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerateMeritList.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerateMeritList.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerateMeritList.Image")));
+            this.btnGenerateMeritList.Image = global::AdmissityUET.Properties.Resources.Generate_keys_icon;
             this.btnGenerateMeritList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenerateMeritList.Location = new System.Drawing.Point(413, 28);
             this.btnGenerateMeritList.Name = "btnGenerateMeritList";
@@ -804,7 +804,7 @@
             this.btnSendEmail.FlatAppearance.BorderSize = 2;
             this.btnSendEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSendEmail.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnSendEmail.Image")));
+            this.btnSendEmail.Image = global::AdmissityUET.Properties.Resources.email_icon;
             this.btnSendEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSendEmail.Location = new System.Drawing.Point(545, 28);
             this.btnSendEmail.Name = "btnSendEmail";

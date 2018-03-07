@@ -11,6 +11,7 @@ using iTextSharp.text;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using iTextSharp.text.pdf.draw;
+using System.Reflection;
 
 namespace AdmissityUET.models
 {
@@ -124,6 +125,7 @@ namespace AdmissityUET.models
         // core algorithm to generate the merit list
         public static void GenerateMeritList()
         {
+            
             // Sorting Students Applications On the Basis of Merit
             List<StudentApplication> ApplicationsSortedList = APPLICATION.applications.OrderBy(o => o.aggregate).ToList();
 
@@ -186,6 +188,7 @@ namespace AdmissityUET.models
             doc.Open();
             // Prepare logo for Display
             string LOGO = "C:\\Users\\Antivirus\\Documents\\Visual Studio 2015\\Projects\\AdmissityUET\\AdmissityUET\\img\\logo.png";
+            //string LOGO = Properties.Resources.logo.ToString();
             Image pic = Image.GetInstance(LOGO);
             pic.SpacingBefore = 1f;
             pic.SpacingAfter = 1f;
