@@ -9,13 +9,13 @@ namespace AdmissityUET.models
     class StudentApplication
     {
         public const int MAX_PREFS = 3;
-        public static int ARN  = 0;
+        public static int ARN = 0;
         public int app_ref_number { get; set; }
         public string student_name { get; set; }
         public string std_father_name { get; set; }
-        public string  std_email { get; set; }
-        public string  std_phone_number { get; set; }
-        public string  std_id_card { get; set; }
+        public string std_email { get; set; }
+        public string std_phone_number { get; set; }
+        public string std_id_card { get; set; }
         //public int Matric_total_marks { get; set; }
         public int Matric_got_marks { get; set; }
         //public int FSC_total_marks { get; set; }
@@ -25,7 +25,7 @@ namespace AdmissityUET.models
         public int GAT_got_marks { get; set; }
         public double aggregate { get; set; }
         public List<Preference> preferences { get; set; }
-        
+
         public StudentApplication()
         {
             // each time new student added a new ARN is generated
@@ -36,7 +36,7 @@ namespace AdmissityUET.models
             std_email = "";
             std_phone_number = "";
             std_id_card = "";
-           // Matric_total_marks = 0;
+            // Matric_total_marks = 0;
             Matric_got_marks = 0;
             //FSC_total_marks = 0;
             FSC_got_marks = 0;
@@ -44,7 +44,17 @@ namespace AdmissityUET.models
             //GAT_total_marks = 0;
             GAT_got_marks = 0;
             aggregate = 0.0;
+            preferences = new List<Preference>();
         }
+        public StudentApplication(int arn, string name, string father, string email, double agre)
+        {
+            ARN = arn;
+            student_name = name;
+            std_father_name = father;
+            std_email = email;
+            aggregate = agre;
+        }
+
         public void PrintReceipt()
         {
             // code to print the receipt

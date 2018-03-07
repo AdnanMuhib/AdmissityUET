@@ -23,7 +23,13 @@ namespace AdmissityUET.models
         // Add some dummy data on the application launch
         public APPLICATION()
         {
-            Department a = new Department("Computer Science",5);
+
+            AddDummyData();
+        }
+        private void AddDummyData()
+        {
+            // Add Dummy Department
+            Department a = new Department("Computer Science", 5);
             Department b = new Department("Computer Engineering", 5);
             Department c = new Department("Electrical", 5);
             Department d = new Department("CIVIL", 5);
@@ -31,8 +37,41 @@ namespace AdmissityUET.models
             departments.Add(b);
             departments.Add(c);
             departments.Add(d);
-        }
+            // Add Dummy Applications
+            StudentApplication sa1 = new StudentApplication(1, "Muhammad Adnan","Hafiz Mohib Ali","adnan.muhib@rocketmail.com", 73.95);
+            List<Preference> PList1 = new List<Preference>();
+            PList1.Add(new Preference("Computer Science", "First"));
+            PList1.Add(new Preference("Computer Engineering", "Second"));
+            PList1.Add(new Preference("Electrical Engineering", "Third"));
+            sa1.preferences = PList1;
+            applications.Add(sa1);
 
+            StudentApplication sa2 = new StudentApplication(1, "Saqib Ameen", "Muhammad Ameen", "mrsaqibameen@gmail.com", 90);
+            List<Preference> PList2 = new List<Preference>();
+            PList2.Add(new Preference("Computer Science", "Second"));
+            PList2.Add(new Preference("Computer Engineering", "First"));
+            PList2.Add(new Preference("Electrical Engineering", "Third"));
+            sa2.preferences = PList2;
+            applications.Add(sa2);
+
+            StudentApplication sa3 = new StudentApplication(1, "Muhammad Ramzan", "Nawab Ali", "ramzan595@yahoo.com", 74.344);
+            List<Preference> PList3 = new List<Preference>();
+            PList3.Add(new Preference("Computer Science", "First"));
+            PList3.Add(new Preference("Computer Engineering", "Second"));
+            PList3.Add(new Preference("Electrical Engineering", "Third"));
+            sa3.preferences = PList3;
+            applications.Add(sa3);
+
+            StudentApplication sa4 = new StudentApplication(1, "Aurangzaib Sial", "Muhammad Nawaz", "aurangzaib786@gmail.com", 72.95);
+            List<Preference> PList4 = new List<Preference>();
+            PList4.Add(new Preference("Computer Science", "Third"));
+            PList1.Add(new Preference("Computer Engineering", "Second"));
+            PList1.Add(new Preference("Electrical Engineering", "First"));
+            sa4.preferences = PList4;
+            applications.Add(sa4);
+            //StudentApplication sa5 = new StudentApplication(1, "Adnan", "Hafiz Mohib Ali", "adnan.muhib@rocketmail.com", 73.95);
+            //StudentApplication sa6 = new StudentApplication(1, "Adnan", "Hafiz Mohib Ali", "adnan.muhib@rocketmail.com", 73.95);
+        }
         // Add Student Application if it is not already added into the database
         public static bool AddStudentApplication(StudentApplication app)
         {
@@ -115,7 +154,8 @@ namespace AdmissityUET.models
             smtp.Port = 587;
             smtp.UseDefaultCredentials = false;
             smtp.EnableSsl = true;
-            NetworkCredential nc = new NetworkCredential(AdmissityUET.Properties.Resources.senderEmail, AdmissityUET.Properties.Resources.senderEmailPassword);
+            NetworkCredential nc = new NetworkCredential(AdmissityUET.Properties.Resources.senderEmail,
+                                                         AdmissityUET.Properties.Resources.senderEmailPassword);
             smtp.Credentials = nc;
             smtp.Send(msg);
         }
@@ -221,7 +261,15 @@ namespace AdmissityUET.models
                 table.AddCell(std.aggregate.ToString());
                 table.AddCell(std.department);
             }
-            
+            foreach (StudentApplication std in applications)
+            {
+                table.AddCell(std.app_ref_number.ToString());
+                table.AddCell(std.student_name);
+                table.AddCell(std.std_father_name);
+                table.AddCell(std.aggregate.ToString());
+                table.AddCell(std.std_phone_number);
+            }
+
 
             doc.Add(table);
             doc.Close();

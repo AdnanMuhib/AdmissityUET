@@ -12,5 +12,15 @@ namespace AdmissityUET.models
         public string pref_dept_name { get; set; }
         // first, second or third
         public string pref_number { get; set; }
+
+        public Preference(string name, string pref)
+        {
+            pref_dept_name = name;
+            pref_number = pref;
+        }
+        public Preference()
+        {
+
+        }
     }
 }
