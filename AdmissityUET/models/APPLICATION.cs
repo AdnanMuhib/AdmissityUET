@@ -216,7 +216,7 @@ namespace AdmissityUET.models
             
             Rectangle pageSize = new Rectangle(PageSize.A4);
             
-            pageSize.BackgroundColor = new BaseColor(System.Drawing.Color.DeepSkyBlue);
+            pageSize.BackgroundColor = new BaseColor(System.Drawing.Color.Azure);
             // new document with above page size
             Document doc = new Document(pageSize, 36, 72, 72, 36);
             // pdf writer for the doc and fs
