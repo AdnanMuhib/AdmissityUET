@@ -131,7 +131,7 @@ namespace AdmissityUET.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to dummyvariable420@gmail.com.
+        ///   Looks up a localized string similar to YourEmail.
         /// </summary>
         internal static string senderEmail {
             get {
@@ -140,7 +140,7 @@ namespace AdmissityUET.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An0nym0us.
+        ///   Looks up a localized string similar to YourPassword.
         /// </summary>
         internal static string senderEmailPassword {
             get {
