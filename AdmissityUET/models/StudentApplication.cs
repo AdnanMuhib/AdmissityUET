@@ -46,13 +46,14 @@ namespace AdmissityUET.models
             aggregate = 0.0;
             preferences = new List<Preference>();
         }
-        public StudentApplication(int arn, string name, string father, string email, double agre)
+        public StudentApplication(int arn, string name, string father,string idCard, string email, double agre)
         {
             app_ref_number = arn;
             student_name = name;
             std_father_name = father;
             std_email = email;
             aggregate = agre;
+            std_id_card = idCard;
         }
 
         public void PrintReceipt()

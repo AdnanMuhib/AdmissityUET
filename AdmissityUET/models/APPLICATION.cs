@@ -42,7 +42,7 @@ namespace AdmissityUET.models
             departments.Add(c);
             departments.Add(d);
             // Add Dummy Applications
-            StudentApplication sa1 = new StudentApplication(1, "Muhammad Adnan","Hafiz Mohib Ali","adnan.muhib@rocketmail.com", 73.95);
+            StudentApplication sa1 = new StudentApplication(1, "Muhammad Adnan","Hafiz Mohib Ali","adnan.muhib@rocketmail.com","123456", 73.95);
             List<Preference> PList1 = new List<Preference>();
             PList1.Add(new Preference("Computer Science", "First"));
             PList1.Add(new Preference("Computer Engineering", "Second"));
@@ -50,7 +50,7 @@ namespace AdmissityUET.models
             sa1.preferences = PList1;
             applications.Add(sa1);
 
-            StudentApplication sa2 = new StudentApplication(2, "Saqib Ameen", "Muhammad Ameen", "mrsaqibameen@gmail.com", 90);
+            StudentApplication sa2 = new StudentApplication(2, "Saqib Ameen", "Muhammad Ameen", "mrsaqibameen@gmail.com", "123456", 90);
             List<Preference> PList2 = new List<Preference>();
             PList2.Add(new Preference("Computer Engineering", "First"));
             PList2.Add(new Preference("Computer Science", "Second"));
@@ -58,7 +58,7 @@ namespace AdmissityUET.models
             sa2.preferences = PList2;
             applications.Add(sa2);
 
-            StudentApplication sa3 = new StudentApplication(3, "Muhammad Ramzan", "Nawab Ali", "ramzan595@yahoo.com", 74.344);
+            StudentApplication sa3 = new StudentApplication(3, "Muhammad Ramzan", "Nawab Ali", "ramzan595@yahoo.com", "123456", 74.344);
             List<Preference> PList3 = new List<Preference>();
             PList3.Add(new Preference("Computer Science", "First"));
             PList3.Add(new Preference("Computer Engineering", "Second"));
@@ -66,7 +66,7 @@ namespace AdmissityUET.models
             sa3.preferences = PList3;
             applications.Add(sa3);
 
-            StudentApplication sa4 = new StudentApplication(4, "Aurangzaib Sial", "Muhammad Nawaz", "aurangzaib786@gmail.com", 72.95);
+            StudentApplication sa4 = new StudentApplication(4, "Aurangzaib Sial", "Muhammad Nawaz", "aurangzaib786@gmail.com", "123456", 72.95);
             List<Preference> PList4 = new List<Preference>();
             PList1.Add(new Preference("Electrical Engineering", "First"));
             PList1.Add(new Preference("Computer Engineering", "Second"));

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -158,6 +159,16 @@ namespace AdmissityUET.forms
                 MessageBox.Show("Personal information Incomplete");
                 return;
             }
+            try
+            {
+                MailAddress email = new MailAddress(txtEmail.Text);
+
+            }
+            catch
+            {
+                MessageBox.Show("Email Address is not valid");
+            }
+
             // add Personal Information
             app.student_name = txtName.Text;
             app.std_father_name = txtFatherName.Text;
@@ -189,6 +200,7 @@ namespace AdmissityUET.forms
             else
             {
                 MessageBox.Show("You Must Add 3 Preferences");
+                return;
             }
             // Application Ready.. Now Add into Database
             if (APPLICATION.AddStudentApplication(app))
