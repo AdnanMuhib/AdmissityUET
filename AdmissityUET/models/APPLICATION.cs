@@ -12,6 +12,9 @@ using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using iTextSharp.text.pdf.draw;
 using System.Reflection;
+using System.Windows.Forms;
+using System.Threading;
+using System.Diagnostics;
 
 namespace AdmissityUET.models
 {
@@ -47,15 +50,15 @@ namespace AdmissityUET.models
             sa1.preferences = PList1;
             applications.Add(sa1);
 
-            StudentApplication sa2 = new StudentApplication(1, "Saqib Ameen", "Muhammad Ameen", "mrsaqibameen@gmail.com", 90);
+            StudentApplication sa2 = new StudentApplication(2, "Saqib Ameen", "Muhammad Ameen", "mrsaqibameen@gmail.com", 90);
             List<Preference> PList2 = new List<Preference>();
-            PList2.Add(new Preference("Computer Science", "Second"));
             PList2.Add(new Preference("Computer Engineering", "First"));
+            PList2.Add(new Preference("Computer Science", "Second"));
             PList2.Add(new Preference("Electrical Engineering", "Third"));
             sa2.preferences = PList2;
             applications.Add(sa2);
 
-            StudentApplication sa3 = new StudentApplication(1, "Muhammad Ramzan", "Nawab Ali", "ramzan595@yahoo.com", 74.344);
+            StudentApplication sa3 = new StudentApplication(3, "Muhammad Ramzan", "Nawab Ali", "ramzan595@yahoo.com", 74.344);
             List<Preference> PList3 = new List<Preference>();
             PList3.Add(new Preference("Computer Science", "First"));
             PList3.Add(new Preference("Computer Engineering", "Second"));
@@ -63,11 +66,13 @@ namespace AdmissityUET.models
             sa3.preferences = PList3;
             applications.Add(sa3);
 
-            StudentApplication sa4 = new StudentApplication(1, "Aurangzaib Sial", "Muhammad Nawaz", "aurangzaib786@gmail.com", 72.95);
+            StudentApplication sa4 = new StudentApplication(4, "Aurangzaib Sial", "Muhammad Nawaz", "aurangzaib786@gmail.com", 72.95);
             List<Preference> PList4 = new List<Preference>();
-            PList4.Add(new Preference("Computer Science", "Third"));
-            PList1.Add(new Preference("Computer Engineering", "Second"));
             PList1.Add(new Preference("Electrical Engineering", "First"));
+            PList1.Add(new Preference("Computer Engineering", "Second"));
+            PList4.Add(new Preference("Computer Science", "Third"));
+            
+            
             sa4.preferences = PList4;
             applications.Add(sa4);
             //StudentApplication sa5 = new StudentApplication(1, "Adnan", "Hafiz Mohib Ali", "adnan.muhib@rocketmail.com", 73.95);
@@ -127,9 +132,41 @@ namespace AdmissityUET.models
         {
             
             // Sorting Students Applications On the Basis of Merit
-            List<StudentApplication> ApplicationsSortedList = APPLICATION.applications.OrderBy(o => o.aggregate).ToList();
-
-
+            List<StudentApplication> ApplicationsSortedList = APPLICATION.applications.OrderByDescending(o => o.aggregate).ToList();
+            // go through all student applications
+            foreach (StudentApplication app in ApplicationsSortedList)
+            {
+                // go through the selectd preferences of the student 
+                // if not selected in first preference
+                foreach(Preference p in app.preferences)
+                {
+                    // get the Department object to check the seats quota
+                    Department d = departments.Single(o => o.dept_name.Equals(p.pref_dept_name));
+                    if (d.dept_seats_quota != 0)
+                    {
+                        // create new object of selected Student to add in the list
+                        SelectedStudent selected = new SelectedStudent();
+                        selected.ARN = app.app_ref_number;
+                        selected.email_id = app.std_email;
+                        selected.father_name = app.std_father_name;
+                        selected.name = app.student_name;
+                        selected.aggregate = app.aggregate;
+                        selected.department = p.pref_dept_name;
+                        // add student to the list of selected students
+                        selectedStudents.Add(selected);
+                        // change the remaining seats in the departments
+                        foreach(Department dpt in departments)
+                        {
+                            if (dpt.dept_name.Equals(d.dept_name))
+                            {
+                                dpt.dept_seats_quota = dpt.dept_seats_quota - 1;
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
         }
 
         // Customized Email to the selected students 
@@ -171,7 +208,7 @@ namespace AdmissityUET.models
         {
             if(selectedStudents.Count <= 0)
             {
-               // return false;
+                return false;
             }
             
             // create a new file stream for pdf file
@@ -179,9 +216,9 @@ namespace AdmissityUET.models
             
             Rectangle pageSize = new Rectangle(PageSize.A4);
             
-            pageSize.BackgroundColor = new BaseColor(System.Drawing.Color.Azure);
+            pageSize.BackgroundColor = new BaseColor(System.Drawing.Color.DeepSkyBlue);
             // new document with above page size
-            Document doc = new Document(pageSize, 36, 72, 0, 36);
+            Document doc = new Document(pageSize, 36, 72, 72, 36);
             // pdf writer for the doc and fs
             PdfWriter writer = PdfWriter.GetInstance(doc, fs);
             // open Doc
@@ -264,22 +301,54 @@ namespace AdmissityUET.models
                 table.AddCell(std.aggregate.ToString());
                 table.AddCell(std.department);
             }
-            foreach (StudentApplication std in applications)
+            /*foreach (StudentApplication std in applications)
             {
                 table.AddCell(std.app_ref_number.ToString());
                 table.AddCell(std.student_name);
                 table.AddCell(std.std_father_name);
                 table.AddCell(std.aggregate.ToString());
                 table.AddCell(std.std_phone_number);
-            }
-
-
+            }*/
             doc.Add(table);
             doc.Close();
             writer.Close();
             fs.Close();
+            printPDFWithAcrobat();
             return true;
         }
+        // Show Print Dialogue Box
+        public static void printPDFWithAcrobat()
+        {
+            string Filepath = @"Merit_List.pdf";
+
+            using (PrintDialog Dialog = new PrintDialog())
+            {
+                Dialog.ShowDialog();
+
+                ProcessStartInfo printProcessInfo = new ProcessStartInfo()
+                {
+                    Verb = "print",
+                    CreateNoWindow = true,
+                    FileName = Filepath,
+                    WindowStyle = ProcessWindowStyle.Hidden
+                };
+
+                Process printProcess = new Process();
+                printProcess.StartInfo = printProcessInfo;
+                printProcess.Start();
+
+                printProcess.WaitForInputIdle();
+
+                Thread.Sleep(3000);
+
+                if (false == printProcess.CloseMainWindow())
+                {
+                    printProcess.Kill();
+                }
+            }
+        }
+
+
         // Verify the Login Credentials
         public static bool VerifyOperator(Operator op)
         {

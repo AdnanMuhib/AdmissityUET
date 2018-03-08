@@ -179,7 +179,7 @@ namespace AdmissityUET.forms
             app.ECAT_got_marks = Convert.ToInt32(numEcatMarks.Value);
             app.GAT_got_marks = Convert.ToInt32(numGatMarks.Value);
             app.aggregate = calculateAggrigate(app.FSC_got_marks, app.ECAT_got_marks);
-
+            app.app_ref_number = APPLICATION.applications.Count + 1;
             // check Preference List
             if (prefs.Count == 3)
             {

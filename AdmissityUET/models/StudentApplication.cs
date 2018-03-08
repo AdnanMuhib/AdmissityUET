@@ -9,7 +9,7 @@ namespace AdmissityUET.models
     class StudentApplication
     {
         public const int MAX_PREFS = 3;
-        public static int ARN = 0;
+        //public static int ARN = 0;
         public int app_ref_number { get; set; }
         public string student_name { get; set; }
         public string std_father_name { get; set; }
@@ -29,8 +29,8 @@ namespace AdmissityUET.models
         public StudentApplication()
         {
             // each time new student added a new ARN is generated
-            ARN = ARN + 1;
-            app_ref_number = ARN;
+            //ARN = ARN + 1;
+            app_ref_number = APPLICATION.applications.Count + 1;
             student_name = "";
             std_father_name = "";
             std_email = "";
@@ -48,7 +48,7 @@ namespace AdmissityUET.models
         }
         public StudentApplication(int arn, string name, string father, string email, double agre)
         {
-            ARN = arn;
+            app_ref_number = arn;
             student_name = name;
             std_father_name = father;
             std_email = email;
