@@ -224,9 +224,10 @@ namespace AdmissityUET.models
             // open Doc
             doc.Open();
             // Prepare logo for Display
-            string LOGO = "C:\\Users\\Antivirus\\Documents\\Visual Studio 2015\\Projects\\AdmissityUET\\AdmissityUET\\img\\logo.png";
+            string LOGO_PATH = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\img\\logo.png";
+            //string LOGO = "C:\\Users\\Antivirus\\Documents\\Visual Studio 2015\\Projects\\AdmissityUET\\AdmissityUET\\img\\logo.png";
             //string LOGO = Properties.Resources.logo.ToString();
-            Image pic = Image.GetInstance(LOGO);
+            Image pic = Image.GetInstance(LOGO_PATH);
             pic.SpacingBefore = 1f;
             pic.SpacingAfter = 1f;
             pic.Alignment = Element.ALIGN_LEFT;
