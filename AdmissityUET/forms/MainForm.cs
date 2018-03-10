@@ -338,5 +338,11 @@ namespace AdmissityUET.forms
         {
             APPLICATION.PrintMeritList();
         }
+
+        private void btnGmailSettings_Click(object sender, EventArgs e)
+        {
+            EmailForm frm = new EmailForm();
+            frm.Show();
+        }
     }
 }

@@ -88,6 +88,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGmailSettings = new System.Windows.Forms.PictureBox();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExitWindow)).BeginInit();
             this.panel3.SuspendLayout();
@@ -108,11 +109,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridApplications)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGmailSettings)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelHeader
             // 
             this.PanelHeader.BackColor = System.Drawing.Color.Purple;
+            this.PanelHeader.Controls.Add(this.btnGmailSettings);
             this.PanelHeader.Controls.Add(this.btnExitWindow);
             this.PanelHeader.Controls.Add(this.label3);
             this.PanelHeader.Controls.Add(this.panel3);
@@ -857,6 +860,19 @@
             this.panel1.Size = new System.Drawing.Size(569, 269);
             this.panel1.TabIndex = 12;
             // 
+            // btnGmailSettings
+            // 
+            this.btnGmailSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGmailSettings.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnGmailSettings.Image = global::AdmissityUET.Properties.Resources.gmail;
+            this.btnGmailSettings.Location = new System.Drawing.Point(813, 0);
+            this.btnGmailSettings.Name = "btnGmailSettings";
+            this.btnGmailSettings.Size = new System.Drawing.Size(107, 69);
+            this.btnGmailSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnGmailSettings.TabIndex = 10;
+            this.btnGmailSettings.TabStop = false;
+            this.btnGmailSettings.Click += new System.EventHandler(this.btnGmailSettings_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -904,6 +920,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGmailSettings)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -969,5 +986,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox btnGmailSettings;
     }
 }

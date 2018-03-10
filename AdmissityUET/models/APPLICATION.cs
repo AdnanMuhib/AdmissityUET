@@ -172,20 +172,31 @@ namespace AdmissityUET.models
         // Customized Email to the selected students 
         public static  void EmailSelectedStudents()
         {
-            //email("adnan.muhib@rocketmail.com", "Adnan");
+            // check if email settings are valid or not
+            string YourEmail = AdmissityUET.Properties.Settings.Default.UserEmail;
+            string YourPass = AdmissityUET.Properties.Settings.Default.YourEmailPassword;
+            if (YourEmail.Equals("YourEmail") || YourPass.Equals("YourPassword"))
+            {
+
+                MessageBox.Show("Setup your Email and Password First");
+                return;
+            }
             // Send Email to all selected students 
             foreach (SelectedStudent std in selectedStudents)
             {
+               
                 email(std.email_id,std.name);
             }
         }
         private static void email(string email, string name)
         {
+            string YourEmail = AdmissityUET.Properties.Settings.Default.UserEmail;
+            string YourPass = AdmissityUET.Properties.Settings.Default.YourEmailPassword;
             // email template to send email
             string toaddr = email;
             MailMessage msg = new MailMessage();
             msg.Subject = "Congratulations!! Admission in UET";
-            msg.From = new MailAddress(AdmissityUET.Properties.Resources.senderEmail);
+            msg.From = new MailAddress(YourEmail);
             msg.Body = "Dear " + name + ", It is to inform you that you have been shortlisted for Admission in Most Prestigious University of Pakistan, submit your fee to confirm your seat before the due date.";
             msg.To.Add(new MailAddress(toaddr));
             SmtpClient smtp = new SmtpClient();
@@ -193,8 +204,7 @@ namespace AdmissityUET.models
             smtp.Port = 587;
             smtp.UseDefaultCredentials = false;
             smtp.EnableSsl = true;
-            NetworkCredential nc = new NetworkCredential(AdmissityUET.Properties.Resources.senderEmail,
-                                                         AdmissityUET.Properties.Resources.senderEmailPassword);
+            NetworkCredential nc = new NetworkCredential(YourEmail, YourPass);
             smtp.Credentials = nc;
             smtp.Send(msg);
         }

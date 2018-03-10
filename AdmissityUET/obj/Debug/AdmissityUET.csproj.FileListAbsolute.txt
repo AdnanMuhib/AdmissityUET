@@ -32,3 +32,4 @@ C:\Users\Antivirus\documents\visual studio 2015\Projects\AdmissityUET\AdmissityU
 C:\Users\Antivirus\documents\visual studio 2015\Projects\AdmissityUET\AdmissityUET\bin\Debug\itext.sign.xml
 C:\Users\Antivirus\documents\visual studio 2015\Projects\AdmissityUET\AdmissityUET\bin\Debug\itextsharp.dll
 C:\Users\Antivirus\documents\visual studio 2015\Projects\AdmissityUET\AdmissityUET\bin\Debug\itextsharp.xml
+C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\AdmissityUET\AdmissityUET\obj\Debug\AdmissityUET.forms.EmailForm.resources
