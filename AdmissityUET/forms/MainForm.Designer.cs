@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.PanelHeader = new System.Windows.Forms.Panel();
+            this.btnGmailSettings = new System.Windows.Forms.PictureBox();
             this.btnExitWindow = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -88,8 +89,8 @@
             this.label23 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnGmailSettings = new System.Windows.Forms.PictureBox();
             this.PanelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGmailSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExitWindow)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -109,7 +110,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridApplications)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGmailSettings)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -124,6 +124,19 @@
             this.PanelHeader.Name = "PanelHeader";
             this.PanelHeader.Size = new System.Drawing.Size(1027, 69);
             this.PanelHeader.TabIndex = 0;
+            // 
+            // btnGmailSettings
+            // 
+            this.btnGmailSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGmailSettings.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnGmailSettings.Image = global::AdmissityUET.Properties.Resources.gmail;
+            this.btnGmailSettings.Location = new System.Drawing.Point(813, 0);
+            this.btnGmailSettings.Name = "btnGmailSettings";
+            this.btnGmailSettings.Size = new System.Drawing.Size(107, 69);
+            this.btnGmailSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnGmailSettings.TabIndex = 10;
+            this.btnGmailSettings.TabStop = false;
+            this.btnGmailSettings.Click += new System.EventHandler(this.btnGmailSettings_Click);
             // 
             // btnExitWindow
             // 
@@ -860,19 +873,6 @@
             this.panel1.Size = new System.Drawing.Size(569, 269);
             this.panel1.TabIndex = 12;
             // 
-            // btnGmailSettings
-            // 
-            this.btnGmailSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGmailSettings.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnGmailSettings.Image = global::AdmissityUET.Properties.Resources.gmail;
-            this.btnGmailSettings.Location = new System.Drawing.Point(813, 0);
-            this.btnGmailSettings.Name = "btnGmailSettings";
-            this.btnGmailSettings.Size = new System.Drawing.Size(107, 69);
-            this.btnGmailSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnGmailSettings.TabIndex = 10;
-            this.btnGmailSettings.TabStop = false;
-            this.btnGmailSettings.Click += new System.EventHandler(this.btnGmailSettings_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -895,6 +895,7 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGmailSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExitWindow)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -920,7 +921,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGmailSettings)).EndInit();
             this.ResumeLayout(false);
 
         }

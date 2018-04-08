@@ -32,3 +32,4 @@ C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\AdmissityUET\AdmissityU
 C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\AdmissityUET\AdmissityUET\obj\Release\AdmissityUET.exe
 C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\AdmissityUET\AdmissityUET\obj\Release\AdmissityUET.pdb
 C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\AdmissityUET\AdmissityUET\obj\Release\AdmissityUET.forms.EmailForm.resources
+C:\Users\Antivirus\Documents\Visual Studio 2015\Projects\AdmissityUET\AdmissityUET\obj\Release\AdmissityUET.csprojResolveAssemblyReference.cache
