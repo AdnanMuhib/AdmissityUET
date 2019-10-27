@@ -1,5 +1,5 @@
 # AdmissityUET
-Desktop Application for University Admission Application Submission and and Merit List Generation
+Desktop Application for the University Admission Application Submission and Merit List Generation
 ## Download for Windows
 ![Download AdmissityUET V1.0.exe](https://github.com/AdnanMuhib/AdmissityUET/blob/master/dist/Admissity%20UET%20V1.0.exe?raw=true)
 ![Login Screen](https://github.com/AdnanMuhib/AdmissityUET/blob/master/ScreenShots/Case%20Study.png)

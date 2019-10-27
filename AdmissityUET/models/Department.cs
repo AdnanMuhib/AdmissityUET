@@ -17,7 +17,7 @@ namespace AdmissityUET.models
         // available seats quota for the department
         [DisplayName("Seats Quota")]
         public int dept_seats_quota { get; set; }
-        
+
         public Department(int id,string name, int quota)
         {
             dept_id = id;
