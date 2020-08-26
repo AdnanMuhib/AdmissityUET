@@ -18,5 +18,5 @@ Desktop Application for the University Admission Application Submission and Meri
 ![Login Screen](https://github.com/AdnanMuhib/AdmissityUET/blob/master/ScreenShots/Screen%209.png)
 ### PDF Output
 ![Login Screen](https://github.com/AdnanMuhib/AdmissityUET/blob/master/ScreenShots/Screen%2010.png)
-### Configure Email to word With yours
+### Configure Email to work With yours
 ![Login Screen](https://github.com/AdnanMuhib/AdmissityUET/blob/master/ScreenShots/Screen%2011.png)
